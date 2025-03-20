@@ -35,7 +35,7 @@ func main() {
 		"go":       "../goring/",
 		"erlang":   "../erlring/",
 		"elixir":   "../exring/",
-		//"haskell":  "../haskring",
+                "haskell":  "../haskring",
 		//"ponylang": "../ponyring",
 		"rust":     "../rustring",
 	}
