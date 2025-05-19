@@ -31,13 +31,14 @@ func main() {
 	tripsSteps := calculateSteps(tripsRange)
 
 	var languages = map[string]string{
-		//"cpp":      "../cppring/",
-		"go":       "../goring/",
-		"erlang":   "../erlring/",
-		"elixir":   "../exring/",
-                "haskell":  "../haskring",
+                "cpp":      "../cppring/",
+                "go":       "../goring/",
+                "erlang":   "../erlring/",
+                "elixir":   "../exring/",
+                "haskell-mvars":  "../haskring",
+                "haskell-channels":  "../haskring-channels",
 		//"ponylang": "../ponyring",
-		"rust":     "../rustring",
+                "rust":     "../rustring",
 	}
 
 	for language, path := range languages {
