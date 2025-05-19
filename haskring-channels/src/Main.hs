@@ -34,15 +34,15 @@ mainRun Options{..} = do
     --if unbuffered 
     --  then do
     do
-        (s, e) <- mkRingUnbuff nodes 
-        tb <- getCurrentTime
-        total <- V.sum <$> (V.forM (V.generate trips (+1)) $ \_ -> putMVar s 0 >> takeMVar e)
-        return (tb, total)
-      --else do
-        --(s, e) <- mkRing nodes 
+        --(s, e) <- mkRingUnbuff nodes 
         --tb <- getCurrentTime
-        --total <- V.sum <$> (V.forM (V.generate trips (+1)) $ \_ -> writeChan s 0 >> readChan e)
+        --total <- V.sum <$> (V.forM (V.generate trips (+1)) $ \_ -> putMVar s 0 >> takeMVar e)
         --return (tb, total)
+      --else do
+        (s, e) <- mkRing nodes 
+        tb <- getCurrentTime
+        total <- V.sum <$> (V.forM (V.generate trips (+1)) $ \_ -> writeChan s 0 >> readChan e)
+        return (tb, total)
 
   t''' <- getCurrentTime 
 

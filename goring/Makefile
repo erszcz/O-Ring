@@ -1,5 +1,5 @@
 all:
-	go build -o ring
+	go build -o ring main.go
 clean:
 	rm ring
 
