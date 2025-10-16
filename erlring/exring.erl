@@ -1,72 +1,46 @@
--file("lib/exring.ex", 1).
+-module(exring).
 
--module('Elixir.ExRing').
-
--compile([no_auto_import, native]).
-
--spec start({integer(), integer()}) -> {integer(),
-                                        integer()}.
-
--spec node_spawn(pid()) -> pid().
-
--spec create_ring(number()) -> pid().
-
--spec chain(pid(), number()) -> pid().
-
--export(['__info__'/1,
+-export([main/1,
          create_ring/1,
          process_node/1,
          run/2,
          start/1]).
 
--spec '__info__'(attributes |
-                 compile |
-                 functions |
-                 macros |
-                 md5 |
-                 exports_md5 |
-                 module |
-                 deprecated |
-                 struct) -> any().
+-define(a2i(A), list_to_integer(atom_to_list(A))).
 
-'__info__'(module) -> 'Elixir.ExRing';
-'__info__'(functions) ->
-    [{create_ring, 1},
-     {process_node, 1},
-     {run, 2},
-     {start, 1}];
-'__info__'(macros) -> [];
-'__info__'(struct) -> nil;
-'__info__'(exports_md5) ->
-    <<"YîL\003Á\236V.í¸\007Zr+\234">>;
-'__info__'(Key = attributes) ->
-    erlang:get_module_info('Elixir.ExRing', Key);
-'__info__'(Key = compile) ->
-    erlang:get_module_info('Elixir.ExRing', Key);
-'__info__'(Key = md5) ->
-    erlang:get_module_info('Elixir.ExRing', Key);
-'__info__'(deprecated) ->
-    [].
+main([Nx, Mx]) ->
+    N = ?a2i(Nx),
+    M = ?a2i(Mx),
+    {CreationTime, RunTime} = start({N, M}),
+    io:format("~p ~p ~p ~p~n", [CreationTime, RunTime, N, M]).
 
- chain(_parent@1, 0) -> _parent@1;
- chain(_parent@1, _n@1) ->
-     chain(node_spawn(_parent@1), _n@1 - 1).
+-spec start({integer(), integer()}) -> {integer(), integer()}.
+start({N, M}) ->
+    {CreationTime, Ring} = timer:tc(?MODULE, create_ring, [N], millisecond),
+    {RunTime, 0} = timer:tc(?MODULE, run, [Ring, M], millisecond),
+    {CreationTime, RunTime}.
 
-create_ring(_n@1) -> chain(erlang:self(), _n@1).
+-spec create_ring(number()) -> pid().
+create_ring(N) -> chain(self(), N).
 
-node_spawn(_dst@1) ->
-    erlang:spawn('Elixir.ExRing', process_node, [_dst@1]).
+-spec chain(pid(), number()) -> pid().
+chain(Parent, 0) -> Parent;
+chain(Parent, N) ->
+    chain(node_spawn(Parent), N - 1).
 
-process_node(_dst@1) ->
-    receive _msg@1 -> erlang:send(_dst@1, _msg@1 + 1) end,
-    process_node(_dst@1).
+-spec node_spawn(pid()) -> pid().
+node_spawn(Dest) ->
+    erlang:spawn(?MODULE, process_node, [Dest]).
 
-run(__ring@1, 0) -> 0;
-run(_ring@1, _step@1) ->
-    erlang:send(_ring@1, 0),
-    receive _ -> run(_ring@1, _step@1 - 1) end.
+process_node(Dest) ->
+    receive
+        Msg -> erlang:send(Dest, Msg + 1)
+    end,
+    process_node(Dest).
 
-start({_n@1, _m@1}) ->
-    {_creation_time@1, _ring@1} = timer:tc('Elixir.ExRing', create_ring, [_n@1]),
-    {_run_time@1, 0} = timer:tc('Elixir.ExRing', run, [_ring@1, _m@1]),
-    {_creation_time@1, _run_time@1}.
+run(_Ring, 0) -> 0;
+run(Ring, Step) ->
+    erlang:send(Ring, 0),
+    receive
+        _ -> run(Ring, Step - 1)
+    end.
