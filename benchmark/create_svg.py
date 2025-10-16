@@ -13,12 +13,12 @@ def generate_svg(data, nodes, trips, iterations):
     # Find max value for scaling
     max_value = 0
     for lang_data in data.values():
-        max_value = max(max_value, lang_data['median'], lang_data['p98'])
+        max_value = max(max_value, lang_data['median'], lang_data['p98'], lang_data['mean'], lang_data['rms'])
 
     # SVG header
-    svg = f'''<svg width="{width}" height="{height}" xmlns="http://www.w3.org/2000/svg">
+    svg = f"""<svg width="{width}" height="{height}" xmlns="http://www.w3.org/2000/svg">
 <rect width="100%" height="100%" fill="white" />
-<g transform="translate({margin["left"]}, {margin["top"]})">'''
+<g transform="translate({margin["left"]}, {margin["top"]})">"""
 
     # Title
     svg += f'<text x="{chart_width / 2}" y="-20" text-anchor="middle" font-family="sans-serif" font-size="20">O-Ring Benchmark Results</text>\n'
@@ -37,7 +37,7 @@ def generate_svg(data, nodes, trips, iterations):
     # X-axis and bars
     num_langs = len(data)
     bar_group_width = chart_width / num_langs
-    bar_width = bar_group_width / 3
+    bar_width = bar_group_width / 5
 
     sorted_data = sorted(data.items(), key=lambda item: item[1]['median'])
 
@@ -45,20 +45,32 @@ def generate_svg(data, nodes, trips, iterations):
         x = i * bar_group_width
         # Median bar
         median_height = (values['median'] / max_value) * chart_height
-        svg += f'<rect x="{x + bar_width/2}" y="{chart_height - median_height}" width="{bar_width}" height="{median_height}" fill="#4e79a7" />\n'
+        svg += f'<rect x="{x + bar_width*0.5}" y="{chart_height - median_height}" width="{bar_width}" height="{median_height}" fill="#4e79a7" />\n'
         # 98th percentile bar
         p98_height = (values['p98'] / max_value) * chart_height
-        svg += f'<rect x="{x + bar_width * 1.5}" y="{chart_height - p98_height}" width="{bar_width}" height="{p98_height}" fill="#f28e2b" />\n'
+        svg += f'<rect x="{x + bar_width*1.5}" y="{chart_height - p98_height}" width="{bar_width}" height="{p98_height}" fill="#f28e2b" />\n'
+        # Mean bar
+        mean_height = (values['mean'] / max_value) * chart_height
+        svg += f'<rect x="{x + bar_width*2.5}" y="{chart_height - mean_height}" width="{bar_width}" height="{mean_height}" fill="#59a14f" />\n'
+        # RMS bar
+        rms_height = (values['rms'] / max_value) * chart_height
+        svg += f'<rect x="{x + bar_width*3.5}" y="{chart_height - rms_height}" width="{bar_width}" height="{rms_height}" fill="#e15759" />\n'
         # Language label
         svg += f'<text x="{x + bar_group_width / 2}" y="{chart_height + 20}" text-anchor="middle" font-family="sans-serif" font-size="12">{lang}</text>\n'
 
     # Legend
     legend_y = chart_height + 60
-    svg += f'<rect x="{chart_width - 450}" y="{legend_y}" width="15" height="15" fill="#4e79a7" />\n'
-    svg += f'<text x="{chart_width - 430}" y="{legend_y + 12}" font-family="sans-serif" font-size="12">Time to Finish Median</text>\n'
-    svg += f'<rect x="{chart_width - 250}" y="{legend_y}" width="15" height="15" fill="#f28e2b" />\n'
-    svg += f'<text x="{chart_width - 230}" y="{legend_y + 12}" font-family="sans-serif" font-size="12">Time to Finish 98th Percentile</text>\n'
+    svg += f'<rect x="{chart_width - 550}" y="{legend_y}" width="15" height="15" fill="#4e79a7" />\n'
+    svg += f'<text x="{chart_width - 530}" y="{legend_y + 12}" font-family="sans-serif" font-size="12">Time to Finish Median</text>\n'
+    svg += f'<rect x="{chart_width - 350}" y="{legend_y}" width="15" height="15" fill="#f28e2b" />\n'
+    svg += f'<text x="{chart_width - 330}" y="{legend_y + 12}" font-family="sans-serif" font-size="12">Time to Finish 98th Percentile</text>\n'
     
+    legend_y2 = chart_height + 80
+    svg += f'<rect x="{chart_width - 550}" y="{legend_y2}" width="15" height="15" fill="#59a14f" />\n'
+    svg += f'<text x="{chart_width - 530}" y="{legend_y2 + 12}" font-family="sans-serif" font-size="12">Time to Finish Mean</text>\n'
+    svg += f'<rect x="{chart_width - 350}" y="{legend_y2}" width="15" height="15" fill="#e15759" />\n'
+    svg += f'<text x="{chart_width - 330}" y="{legend_y2 + 12}" font-family="sans-serif" font-size="12">Time to Finish RMS</text>\n'
+
     legend_y_extra = chart_height + 100
     svg += f'<text x="{chart_width - 350}" y="{legend_y_extra}" font-family="sans-serif" font-size="12">#nodes: {nodes}, trips: {trips}, iterations: {iterations}</text>\n'
 
@@ -79,6 +91,8 @@ if __name__ == '__main__':
     iterations_header = 'iterations'
     median_header = ' time to finish median[ms]'
     p98_header = ' time to finish 98th percentile[ms]'
+    mean_header = 'time to finish mean[ms]'
+    rms_header = 'time to finish RMS'
 
     for file_path in csv_files:
         with open(file_path, 'r') as f:
@@ -101,7 +115,9 @@ if __name__ == '__main__':
             lang = file_path.replace('.csv', '').replace('output/', '').title()
             median = float(values[header.index(median_header)])
             p98 = float(values[header.index(p98_header)])
-            data[lang] = {'median': median, 'p98': p98}
+            mean = float(values[header.index(mean_header)])
+            rms = float(values[header.index(rms_header)])
+            data[lang] = {'median': median, 'p98': p98, 'mean': mean, 'rms': rms}
 
     if data:
         svg_content = generate_svg(data, nodes, trips, iterations)
