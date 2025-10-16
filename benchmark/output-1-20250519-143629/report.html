@@ -1,0 +1,138 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>O-Ring Benchmark Results</title>
+</head>
+<body>
+<h1>O-Ring Benchmark Results</h1>
+<svg width="800" height="600" xmlns="http://www.w3.org/2000/svg">
+<rect width="100%" height="100%" fill="white" />
+<g transform="translate(60, 50)"><text x="360.0" y="-20" text-anchor="middle" font-family="sans-serif" font-size="20">O-Ring Benchmark Setup Times</text>
+<text x="360.0" y="-2" text-anchor="middle" font-family="sans-serif" font-size="12">#nodes: 100000, trips: 1000, iterations: 5</text>
+<line x1="0" y1="0" x2="0" y2="450" stroke="black" />
+<text x="-10" y="450.0" text-anchor="end" alignment-baseline="middle" font-family="sans-serif" font-size="10">0.0s</text>
+<line x1="0" y1="450.0" x2="720" y2="450.0" stroke="#eee" />
+<text x="-10" y="360.0" text-anchor="end" alignment-baseline="middle" font-family="sans-serif" font-size="10">0.0s</text>
+<line x1="0" y1="360.0" x2="720" y2="360.0" stroke="#eee" />
+<text x="-10" y="270.0" text-anchor="end" alignment-baseline="middle" font-family="sans-serif" font-size="10">0.1s</text>
+<line x1="0" y1="270.0" x2="720" y2="270.0" stroke="#eee" />
+<text x="-10" y="180.0" text-anchor="end" alignment-baseline="middle" font-family="sans-serif" font-size="10">0.1s</text>
+<line x1="0" y1="180.0" x2="720" y2="180.0" stroke="#eee" />
+<text x="-10" y="90.0" text-anchor="end" alignment-baseline="middle" font-family="sans-serif" font-size="10">0.1s</text>
+<line x1="0" y1="90.0" x2="720" y2="90.0" stroke="#eee" />
+<text x="-10" y="0.0" text-anchor="end" alignment-baseline="middle" font-family="sans-serif" font-size="10">0.2s</text>
+<line x1="0" y1="0.0" x2="720" y2="0.0" stroke="#eee" />
+<text x="-40" y="225.0" transform="rotate(-90, -40, 225.0)" text-anchor="middle" font-family="sans-serif" font-size="12">Setup Time</text>
+<rect x="10.285714285714286" y="443.27372231404956" width="20.571428571428573" height="6.726277685950413" fill="#e15759" />
+<rect x="30.85714285714286" y="397.43801652892563" width="20.571428571428573" height="52.56198347107438" fill="#59a14f" />
+<rect x="51.42857142857143" y="402.89256198347107" width="20.571428571428573" height="47.107438016528924" fill="#4e79a7" />
+<rect x="72.0" y="389.25619834710744" width="20.571428571428573" height="60.743801652892564" fill="#f28e2b" />
+<text x="51.42857142857143" y="470" text-anchor="middle" font-family="sans-serif" font-size="12">Haskell-Channels</text>
+<rect x="113.14285714285715" y="449.0082644628099" width="20.571428571428573" height="0.9917355371900828" fill="#e15759" />
+<rect x="133.71428571428572" y="397.43801652892563" width="20.571428571428573" height="52.56198347107438" fill="#59a14f" />
+<rect x="154.28571428571428" y="397.93388429752065" width="20.571428571428573" height="52.06611570247934" fill="#4e79a7" />
+<rect x="174.85714285714286" y="396.6942148760331" width="20.571428571428573" height="53.30578512396694" fill="#f28e2b" />
+<text x="154.28571428571428" y="470" text-anchor="middle" font-family="sans-serif" font-size="12">Haskell-Mvars</text>
+<rect x="216.0" y="448.14463388429755" width="20.571428571428573" height="1.855366115702479" fill="#e15759" />
+<rect x="236.57142857142858" y="377.60330578512395" width="20.571428571428573" height="72.39669421487604" fill="#59a14f" />
+<rect x="257.14285714285717" y="378.099173553719" width="20.571428571428573" height="71.90082644628099" fill="#4e79a7" />
+<rect x="277.7142857142857" y="375.6198347107438" width="20.571428571428573" height="74.3801652892562" fill="#f28e2b" />
+<text x="257.14285714285717" y="470" text-anchor="middle" font-family="sans-serif" font-size="12">Rust</text>
+<rect x="318.85714285714283" y="447.7824123966942" width="20.571428571428573" height="2.2175876033057853" fill="#e15759" />
+<rect x="339.42857142857144" y="306.19834710743805" width="20.571428571428573" height="143.80165289256198" fill="#59a14f" />
+<rect x="360.0" y="306.19834710743805" width="20.571428571428573" height="143.80165289256198" fill="#4e79a7" />
+<rect x="380.57142857142856" y="303.7190082644628" width="20.571428571428573" height="146.28099173553719" fill="#f28e2b" />
+<text x="360.0" y="470" text-anchor="middle" font-family="sans-serif" font-size="12">Elixir</text>
+<rect x="421.7142857142857" y="436.2939421487603" width="20.571428571428573" height="13.706057851239668" fill="#e15759" />
+<rect x="442.28571428571433" y="259.58677685950414" width="20.571428571428573" height="190.41322314049586" fill="#59a14f" />
+<rect x="462.8571428571429" y="261.5702479338843" width="20.571428571428573" height="188.4297520661157" fill="#4e79a7" />
+<rect x="483.42857142857144" y="244.21487603305783" width="20.571428571428573" height="205.78512396694217" fill="#f28e2b" />
+<text x="462.8571428571429" y="470" text-anchor="middle" font-family="sans-serif" font-size="12">Go</text>
+<rect x="524.5714285714287" y="443.2372661157025" width="20.571428571428573" height="6.76273388429752" fill="#e15759" />
+<rect x="545.1428571428572" y="255.12396694214877" width="20.571428571428573" height="194.87603305785123" fill="#59a14f" />
+<rect x="565.7142857142858" y="259.0909090909091" width="20.571428571428573" height="190.9090909090909" fill="#4e79a7" />
+<rect x="586.2857142857143" y="249.17355371900825" width="20.571428571428573" height="200.82644628099175" fill="#f28e2b" />
+<text x="565.7142857142858" y="470" text-anchor="middle" font-family="sans-serif" font-size="12">Cpp</text>
+<rect x="627.4285714285714" y="444.79929421487606" width="20.571428571428573" height="5.200705785123968" fill="#e15759" />
+<rect x="648.0" y="6.198347107438053" width="20.571428571428573" height="443.80165289256195" fill="#59a14f" />
+<rect x="668.5714285714286" y="8.677685950413206" width="20.571428571428573" height="441.3223140495868" fill="#4e79a7" />
+<rect x="689.1428571428571" y="0.0" width="20.571428571428573" height="450.0" fill="#f28e2b" />
+<text x="668.5714285714286" y="470" text-anchor="middle" font-family="sans-serif" font-size="12">Erlang</text>
+<rect x="170" y="510" width="15" height="15" fill="#e15759" />
+<text x="190" y="522" font-family="sans-serif" font-size="12">Setup Time RMS</text>
+<rect x="370" y="510" width="15" height="15" fill="#59a14f" />
+<text x="390" y="522" font-family="sans-serif" font-size="12">Setup Time Mean</text>
+<rect x="170" y="530" width="15" height="15" fill="#4e79a7" />
+<text x="190" y="542" font-family="sans-serif" font-size="12">Setup Time Median</text>
+<rect x="370" y="530" width="15" height="15" fill="#f28e2b" />
+<text x="390" y="542" font-family="sans-serif" font-size="12">Setup Time 98th Percentile</text>
+</g>
+</svg>
+
+<svg width="800" height="600" xmlns="http://www.w3.org/2000/svg">
+<rect width="100%" height="100%" fill="white" />
+<g transform="translate(60, 50)"><text x="360.0" y="-20" text-anchor="middle" font-family="sans-serif" font-size="20">O-Ring Benchmark Runtime Results</text>
+<text x="360.0" y="-2" text-anchor="middle" font-family="sans-serif" font-size="12">#nodes: 100000, trips: 1000, iterations: 5</text>
+<line x1="0" y1="0" x2="0" y2="450" stroke="black" />
+<text x="-10" y="450.0" text-anchor="end" alignment-baseline="middle" font-family="sans-serif" font-size="10">0.0s</text>
+<line x1="0" y1="450.0" x2="720" y2="450.0" stroke="#eee" />
+<text x="-10" y="360.0" text-anchor="end" alignment-baseline="middle" font-family="sans-serif" font-size="10">7.1s</text>
+<line x1="0" y1="360.0" x2="720" y2="360.0" stroke="#eee" />
+<text x="-10" y="270.0" text-anchor="end" alignment-baseline="middle" font-family="sans-serif" font-size="10">14.2s</text>
+<line x1="0" y1="270.0" x2="720" y2="270.0" stroke="#eee" />
+<text x="-10" y="180.0" text-anchor="end" alignment-baseline="middle" font-family="sans-serif" font-size="10">21.3s</text>
+<line x1="0" y1="180.0" x2="720" y2="180.0" stroke="#eee" />
+<text x="-10" y="90.0" text-anchor="end" alignment-baseline="middle" font-family="sans-serif" font-size="10">28.4s</text>
+<line x1="0" y1="90.0" x2="720" y2="90.0" stroke="#eee" />
+<text x="-10" y="0.0" text-anchor="end" alignment-baseline="middle" font-family="sans-serif" font-size="10">35.5s</text>
+<line x1="0" y1="0.0" x2="720" y2="0.0" stroke="#eee" />
+<text x="-40" y="225.0" transform="rotate(-90, -40, 225.0)" text-anchor="middle" font-family="sans-serif" font-size="12">Time to Finish</text>
+<rect x="10.285714285714286" y="448.017277007253" width="20.571428571428573" height="1.9827229927469896" fill="#e15759" />
+<rect x="30.85714285714286" y="336.8944440532357" width="20.571428571428573" height="113.10555594676431" fill="#59a14f" />
+<rect x="51.42857142857143" y="336.341806915006" width="20.571428571428573" height="113.65819308499401" fill="#4e79a7" />
+<rect x="72.0" y="335.01091472431517" width="20.571428571428573" height="114.9890852756848" fill="#f28e2b" />
+<text x="51.42857142857143" y="470" text-anchor="middle" font-family="sans-serif" font-size="12">Rust</text>
+<rect x="113.14285714285715" y="449.2144915597493" width="20.571428571428573" height="0.7855084402506866" fill="#e15759" />
+<rect x="133.71428571428572" y="198.7300894303218" width="20.571428571428573" height="251.2699105696782" fill="#59a14f" />
+<rect x="154.28571428571428" y="198.49940145060205" width="20.571428571428573" height="251.50059854939795" fill="#4e79a7" />
+<rect x="174.85714285714286" y="197.9733821561862" width="20.571428571428573" height="252.0266178438138" fill="#f28e2b" />
+<text x="154.28571428571428" y="470" text-anchor="middle" font-family="sans-serif" font-size="12">Haskell-Mvars</text>
+<rect x="216.0" y="449.5772039560594" width="20.571428571428573" height="0.4227960439405676" fill="#e15759" />
+<rect x="236.57142857142858" y="152.62037884656013" width="20.571428571428573" height="297.37962115343987" fill="#59a14f" />
+<rect x="257.14285714285717" y="152.43785648897966" width="20.571428571428573" height="297.56214351102034" fill="#4e79a7" />
+<rect x="277.7142857142857" y="152.23505386944584" width="20.571428571428573" height="297.76494613055416" fill="#f28e2b" />
+<text x="257.14285714285717" y="470" text-anchor="middle" font-family="sans-serif" font-size="12">Cpp</text>
+<rect x="318.85714285714283" y="449.58002532075204" width="20.571428571428573" height="0.4199746792479403" fill="#e15759" />
+<rect x="339.42857142857144" y="109.77832547003732" width="20.571428571428573" height="340.2216745299627" fill="#59a14f" />
+<rect x="360.0" y="109.92535736919933" width="20.571428571428573" height="340.07464263080067" fill="#4e79a7" />
+<rect x="380.57142857142856" y="109.43102598408564" width="20.571428571428573" height="340.56897401591436" fill="#f28e2b" />
+<text x="360.0" y="470" text-anchor="middle" font-family="sans-serif" font-size="12">Haskell-Channels</text>
+<rect x="421.7142857142857" y="443.750197704387" width="20.571428571428573" height="6.249802295612985" fill="#e15759" />
+<rect x="442.28571428571433" y="23.942116752341406" width="20.571428571428573" height="426.0578832476586" fill="#59a14f" />
+<rect x="462.8571428571429" y="23.987747341736508" width="20.571428571428573" height="426.0122526582635" fill="#4e79a7" />
+<rect x="483.42857142857144" y="18.220547848743024" width="20.571428571428573" height="431.779452151257" fill="#f28e2b" />
+<text x="462.8571428571429" y="470" text-anchor="middle" font-family="sans-serif" font-size="12">Elixir</text>
+<rect x="524.5714285714287" y="446.40170876417153" width="20.571428571428573" height="3.598291235828463" fill="#e15759" />
+<rect x="545.1428571428572" y="7.940990071121746" width="20.571428571428573" height="442.05900992887825" fill="#59a14f" />
+<rect x="565.7142857142858" y="8.57474825716497" width="20.571428571428573" height="441.42525174283503" fill="#4e79a7" />
+<rect x="586.2857142857143" y="4.07506513625799" width="20.571428571428573" height="445.924934863742" fill="#f28e2b" />
+<text x="565.7142857142858" y="470" text-anchor="middle" font-family="sans-serif" font-size="12">Erlang</text>
+<rect x="627.4285714285714" y="445.33030315893245" width="20.571428571428573" height="4.66969684106753" fill="#e15759" />
+<rect x="648.0" y="5.1220336596014135" width="20.571428571428573" height="444.8779663403986" fill="#59a14f" />
+<rect x="668.5714285714286" y="6.6734736990352985" width="20.571428571428573" height="443.3265263009647" fill="#4e79a7" />
+<rect x="689.1428571428571" y="0.0" width="20.571428571428573" height="450.0" fill="#f28e2b" />
+<text x="668.5714285714286" y="470" text-anchor="middle" font-family="sans-serif" font-size="12">Go</text>
+<rect x="170" y="510" width="15" height="15" fill="#e15759" />
+<text x="190" y="522" font-family="sans-serif" font-size="12">Time to Finish RMS</text>
+<rect x="370" y="510" width="15" height="15" fill="#59a14f" />
+<text x="390" y="522" font-family="sans-serif" font-size="12">Time to Finish Mean</text>
+<rect x="170" y="530" width="15" height="15" fill="#4e79a7" />
+<text x="190" y="542" font-family="sans-serif" font-size="12">Time to Finish Median</text>
+<rect x="370" y="530" width="15" height="15" fill="#f28e2b" />
+<text x="390" y="542" font-family="sans-serif" font-size="12">Time to Finish 98th Percentile</text>
+</g>
+</svg>
+
+</body>
+</html>
