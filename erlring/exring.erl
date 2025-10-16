@@ -45,11 +45,12 @@
     erlang:get_module_info('Elixir.ExRing', Key);
 '__info__'(Key = md5) ->
     erlang:get_module_info('Elixir.ExRing', Key);
-'__info__'(deprecated) -> [].
+'__info__'(deprecated) ->
+    [].
 
-chain(_parent@1, 0) -> _parent@1;
-chain(_parent@1, _n@1) ->
-    chain(node_spawn(_parent@1), _n@1 - 1).
+ chain(_parent@1, 0) -> _parent@1;
+ chain(_parent@1, _n@1) ->
+     chain(node_spawn(_parent@1), _n@1 - 1).
 
 create_ring(_n@1) -> chain(erlang:self(), _n@1).
 
@@ -66,10 +67,6 @@ run(_ring@1, _step@1) ->
     receive _ -> run(_ring@1, _step@1 - 1) end.
 
 start({_n@1, _m@1}) ->
-    {_creation_time@1, _ring@1} = timer:tc('Elixir.ExRing',
-                                           create_ring,
-                                           [_n@1]),
-    {_run_time@1, 0} = timer:tc('Elixir.ExRing',
-                                run,
-                                [_ring@1, _m@1]),
+    {_creation_time@1, _ring@1} = timer:tc('Elixir.ExRing', create_ring, [_n@1]),
+    {_run_time@1, 0} = timer:tc('Elixir.ExRing', run, [_ring@1, _m@1]),
     {_creation_time@1, _run_time@1}.
