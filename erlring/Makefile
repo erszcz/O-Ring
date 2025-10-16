@@ -1,5 +1,5 @@
 all:
-	ERL_COMPILER_OPTIONS="native" erlc ring.erl
+	erlc exring.erl
 clean:
 	rm *.beam
 

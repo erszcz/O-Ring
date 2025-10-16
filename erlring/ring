@@ -3,5 +3,5 @@
 N=$1
 M=$2
 
-erl -noshell -s ring main $N $M -s init stop
+erl -noinput -noshell -s exring main $N $M -s init stop
 
