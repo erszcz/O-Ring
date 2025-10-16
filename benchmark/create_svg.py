@@ -43,33 +43,33 @@ def generate_svg(data, nodes, trips, iterations):
 
     for i, (lang, values) in enumerate(sorted_data):
         x = i * bar_group_width
-        # Median bar
-        median_height = (values['median'] / max_value) * chart_height
-        svg += f'<rect x="{x + bar_width*0.5}" y="{chart_height - median_height}" width="{bar_width}" height="{median_height}" fill="#4e79a7" />\n'
-        # 98th percentile bar
-        p98_height = (values['p98'] / max_value) * chart_height
-        svg += f'<rect x="{x + bar_width*1.5}" y="{chart_height - p98_height}" width="{bar_width}" height="{p98_height}" fill="#f28e2b" />\n'
-        # Mean bar
-        mean_height = (values['mean'] / max_value) * chart_height
-        svg += f'<rect x="{x + bar_width*2.5}" y="{chart_height - mean_height}" width="{bar_width}" height="{mean_height}" fill="#59a14f" />\n'
         # RMS bar
         rms_height = (values['rms'] / max_value) * chart_height
-        svg += f'<rect x="{x + bar_width*3.5}" y="{chart_height - rms_height}" width="{bar_width}" height="{rms_height}" fill="#e15759" />\n'
+        svg += f'<rect x="{x + bar_width*0.5}" y="{chart_height - rms_height}" width="{bar_width}" height="{rms_height}" fill="#e15759" />\n'
+        # Mean bar
+        mean_height = (values['mean'] / max_value) * chart_height
+        svg += f'<rect x="{x + bar_width*1.5}" y="{chart_height - mean_height}" width="{bar_width}" height="{mean_height}" fill="#59a14f" />\n'
+        # Median bar
+        median_height = (values['median'] / max_value) * chart_height
+        svg += f'<rect x="{x + bar_width*2.5}" y="{chart_height - median_height}" width="{bar_width}" height="{median_height}" fill="#4e79a7" />\n'
+        # 98th percentile bar
+        p98_height = (values['p98'] / max_value) * chart_height
+        svg += f'<rect x="{x + bar_width*3.5}" y="{chart_height - p98_height}" width="{bar_width}" height="{p98_height}" fill="#f28e2b" />\n'
         # Language label
         svg += f'<text x="{x + bar_group_width / 2}" y="{chart_height + 20}" text-anchor="middle" font-family="sans-serif" font-size="12">{lang}</text>\n'
 
     # Legend
     legend_y = chart_height + 60
-    svg += f'<rect x="{chart_width - 550}" y="{legend_y}" width="15" height="15" fill="#4e79a7" />\n'
-    svg += f'<text x="{chart_width - 530}" y="{legend_y + 12}" font-family="sans-serif" font-size="12">Time to Finish Median</text>\n'
-    svg += f'<rect x="{chart_width - 350}" y="{legend_y}" width="15" height="15" fill="#f28e2b" />\n'
-    svg += f'<text x="{chart_width - 330}" y="{legend_y + 12}" font-family="sans-serif" font-size="12">Time to Finish 98th Percentile</text>\n'
+    svg += f'<rect x="{chart_width - 550}" y="{legend_y}" width="15" height="15" fill="#e15759" />\n'
+    svg += f'<text x="{chart_width - 530}" y="{legend_y + 12}" font-family="sans-serif" font-size="12">Time to Finish RMS</text>\n'
+    svg += f'<rect x="{chart_width - 350}" y="{legend_y}" width="15" height="15" fill="#59a14f" />\n'
+    svg += f'<text x="{chart_width - 330}" y="{legend_y + 12}" font-family="sans-serif" font-size="12">Time to Finish Mean</text>\n'
     
     legend_y2 = chart_height + 80
-    svg += f'<rect x="{chart_width - 550}" y="{legend_y2}" width="15" height="15" fill="#59a14f" />\n'
-    svg += f'<text x="{chart_width - 530}" y="{legend_y2 + 12}" font-family="sans-serif" font-size="12">Time to Finish Mean</text>\n'
-    svg += f'<rect x="{chart_width - 350}" y="{legend_y2}" width="15" height="15" fill="#e15759" />\n'
-    svg += f'<text x="{chart_width - 330}" y="{legend_y2 + 12}" font-family="sans-serif" font-size="12">Time to Finish RMS</text>\n'
+    svg += f'<rect x="{chart_width - 550}" y="{legend_y2}" width="15" height="15" fill="#4e79a7" />\n'
+    svg += f'<text x="{chart_width - 530}" y="{legend_y2 + 12}" font-family="sans-serif" font-size="12">Time to Finish Median</text>\n'
+    svg += f'<rect x="{chart_width - 350}" y="{legend_y2}" width="15" height="15" fill="#f28e2b" />\n'
+    svg += f'<text x="{chart_width - 330}" y="{legend_y2 + 12}" font-family="sans-serif" font-size="12">Time to Finish 98th Percentile</text>\n'
 
     legend_y_extra = chart_height + 100
     svg += f'<text x="{chart_width - 350}" y="{legend_y_extra}" font-family="sans-serif" font-size="12">#nodes: {nodes}, trips: {trips}, iterations: {iterations}</text>\n'
