@@ -6,6 +6,10 @@ haskring/.stack-work/
 haskring/stack.yaml.lock
 haskring/.ghc.environment*
 haskring/dist-newstyle
+haskring-channels/.stack-work/
+haskring-channels/stack.yaml.lock
+haskring-channels/.ghc.environment*
+haskring-channels/dist-newstyle
 
 ring
 
