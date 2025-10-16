@@ -1,0 +1,2 @@
+#nodes,trips,iterations,setup mean[ms],setup RMS,setup median[ms],setup 98th percentile[ms],time to finish mean[ms],time to finish RMS, time to finish median[ms], time to finish 98th percentile[ms]
+10000,1,10,8.000000,0.774597,8.000000,9.000000,3.400000,1.200000,3.000000,5.000000
