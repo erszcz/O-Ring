@@ -1,3 +1,5 @@
+#!/usr/bin/env python3
+
 import csv
 import sys
 import glob
@@ -108,8 +110,15 @@ def generate_html(setup_svg, runtime_svg):
 </html>
 """
 
-if __name__ == '__main__':
-    csv_files = glob.glob('output/*.csv')
+def main(args):
+    csv_files = args[1:]
+    if len(csv_files) == 0:
+        csv_files = glob.glob('output/*.csv')
+
+    outfile = 'output/report.html'
+    if len(csv_files) == 1:
+        infile = csv_files[0]
+        outfile = infile.replace('.csv', '.html')
 
     all_rows = []
 
@@ -193,5 +202,8 @@ if __name__ == '__main__':
         runtime_svg = generate_svg(plot_data, nodes, iterations, "O-Ring Benchmark Runtime Results", "Time to Finish", "runtime")
 
         html_content = generate_html(setup_svg, runtime_svg)
-        with open('output/report.html', 'w') as f:
+        with open(outfile, 'w') as f:
             f.write(html_content)
+
+if __name__ == '__main__':
+    main(sys.argv)
