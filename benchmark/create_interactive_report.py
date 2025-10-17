@@ -6,9 +6,9 @@ column_names = [
     'language',
     'nodes',
     'trips',
-    'repetition_index',
-    'timeToSetupRing',
-    'timeFromFirstToLastMessage'
+    'run',
+    'setup time',
+    'run time'
 ]
 
 # Read the raw.dat file into a pandas DataFrame
@@ -24,7 +24,7 @@ except FileNotFoundError:
     print("Error: output/raw.dat not found. Make sure the file exists in the output directory.")
     exit()
 
-metrics = ['timeFromFirstToLastMessage', 'timeToSetupRing']
+metrics = ['run time', 'setup time']
 unique_langs = sorted(df['language'].unique())
 
 # --- Plot 1: x-axis = nodes ---
@@ -138,7 +138,7 @@ for i, node_val in enumerate(unique_nodes):
 fig2.update_layout(updatemenus=updatemenus2, title_text='View 2: X-Axis = Trips', boxmode='group')
 
 # --- Write to HTML ---
-with open('interactive_report.html', 'w') as f:
+with open('output/interactive_report.html', 'w') as f:
     f.write("<h1>Interactive Benchmark Report</h1>")
     f.write(fig1.to_html(full_html=False, include_plotlyjs='cdn'))
     f.write(fig2.to_html(full_html=False, include_plotlyjs=False))
