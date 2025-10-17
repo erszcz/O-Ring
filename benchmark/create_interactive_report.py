@@ -33,7 +33,9 @@ unique_trips = sorted(df['trips'].unique())
 
 for metric in metrics:
     for trip_val in unique_trips:
-        for lang in unique_langs:
+        medians = {lang: df[(df['trips'] == trip_val) & (df['language'] == lang)][metric].median() for lang in unique_langs}
+        sorted_langs = sorted(unique_langs, key=lambda lang: medians[lang])
+        for lang in sorted_langs:
             dff = df[(df['trips'] == trip_val) & (df['language'] == lang)]
             fig1.add_trace(
                 go.Box(
@@ -64,9 +66,9 @@ for i, metric in enumerate(metrics):
     for j in range(len(unique_trips) * len(unique_langs)):
         visibility[i * len(unique_trips) * len(unique_langs) + j] = True
     updatemenus1[0]['buttons'].append({
-        'label': metric,
+        'label': f'{metric} (ms)',
         'method': 'update',
-        'args': [{'visible': visibility}]
+        'args': [{'visible': visibility}, {'yaxis.title': f'{metric} (ms)'}]
     })
 
 for i, trip_val in enumerate(unique_trips):
@@ -80,7 +82,7 @@ for i, trip_val in enumerate(unique_trips):
         'args': [{'visible': visibility}]
     })
 
-fig1.update_layout(updatemenus=updatemenus1, title_text='View 1: X-Axis = Nodes', boxmode='group')
+fig1.update_layout(updatemenus=updatemenus1, title_text='View 1: X-Axis = Nodes', boxmode='group', yaxis_title=f'{metrics[0]} (ms)')
 
 # --- Plot 2: x-axis = trips ---
 fig2 = go.Figure()
@@ -88,7 +90,9 @@ unique_nodes = sorted(df['nodes'].unique())
 
 for metric in metrics:
     for node_val in unique_nodes:
-        for lang in unique_langs:
+        medians = {lang: df[(df['nodes'] == node_val) & (df['language'] == lang)][metric].median() for lang in unique_langs}
+        sorted_langs = sorted(unique_langs, key=lambda lang: medians[lang])
+        for lang in sorted_langs:
             dff = df[(df['nodes'] == node_val) & (df['language'] == lang)]
             fig2.add_trace(
                 go.Box(
@@ -119,9 +123,9 @@ for i, metric in enumerate(metrics):
     for j in range(len(unique_nodes) * len(unique_langs)):
         visibility[i * len(unique_nodes) * len(unique_langs) + j] = True
     updatemenus2[0]['buttons'].append({
-        'label': metric,
+        'label': f'{metric} (ms)',
         'method': 'update',
-        'args': [{'visible': visibility}]
+        'args': [{'visible': visibility}, {'yaxis.title': f'{metric} (ms)'}]
     })
 
 for i, node_val in enumerate(unique_nodes):
@@ -135,7 +139,7 @@ for i, node_val in enumerate(unique_nodes):
         'args': [{'visible': visibility}]
     })
 
-fig2.update_layout(updatemenus=updatemenus2, title_text='View 2: X-Axis = Trips', boxmode='group')
+fig2.update_layout(updatemenus=updatemenus2, title_text='View 2: X-Axis = Trips', boxmode='group', yaxis_title=f'{metrics[0]} (ms)')
 
 # --- Write to HTML ---
 with open('output/interactive_report.html', 'w') as f:
