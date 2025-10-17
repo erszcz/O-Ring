@@ -21,6 +21,19 @@ except FileNotFoundError:
 
 metrics = ["run time", "setup time"]
 unique_langs = sorted(df["language"].unique())
+colors = [
+    "#636EFA",
+    "#EF553B",
+    "#00CC96",
+    "#AB63FA",
+    "#FFA15A",
+    "#19D3F3",
+    "#FF6692",
+    "#B6E880",
+    "#FF97FF",
+    "#FECB52",
+]
+color_map = {lang: colors[i % len(colors)] for i, lang in enumerate(unique_langs)}
 
 # --- Plot 1: x-axis = nodes ---
 fig1 = go.Figure()
@@ -43,6 +56,7 @@ for metric in metrics:
                     y=dff[metric],
                     name=lang,
                     visible=(metric == metrics[0] and trip_val == unique_trips[0]),
+                    marker_color=color_map[lang],
                 )
             )
 
@@ -143,6 +157,7 @@ for metric in metrics:
                     y=dff[metric],
                     name=lang,
                     visible=(metric == metrics[0] and node_val == unique_nodes[0]),
+                    marker_color=color_map[lang],
                 )
             )
 
