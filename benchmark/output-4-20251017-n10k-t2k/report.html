@@ -1,0 +1,488 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>O-Ring Benchmark Results</title>
+</head>
+<body>
+<h1>O-Ring Benchmark Results</h1>
+<svg width="800" height="600" xmlns="http://www.w3.org/2000/svg">
+<rect width="100%" height="100%" fill="white" />
+<g transform="translate(60, 50)"><text x="360.0" y="-20" text-anchor="middle" font-family="sans-serif" font-size="20">O-Ring Benchmark Setup Times</text>
+<text x="360.0" y="-2" text-anchor="middle" font-family="sans-serif" font-size="12">#nodes: 10000, iterations: 10</text>
+<line x1="0" y1="0" x2="0" y2="430" stroke="black" />
+<text x="-10" y="430.0" text-anchor="end" alignment-baseline="middle" font-family="sans-serif" font-size="10">0.0s</text>
+<line x1="0" y1="430.0" x2="720" y2="430.0" stroke="#eee" />
+<text x="-10" y="344.0" text-anchor="end" alignment-baseline="middle" font-family="sans-serif" font-size="10">0.0s</text>
+<line x1="0" y1="344.0" x2="720" y2="344.0" stroke="#eee" />
+<text x="-10" y="258.0" text-anchor="end" alignment-baseline="middle" font-family="sans-serif" font-size="10">0.0s</text>
+<line x1="0" y1="258.0" x2="720" y2="258.0" stroke="#eee" />
+<text x="-10" y="172.0" text-anchor="end" alignment-baseline="middle" font-family="sans-serif" font-size="10">0.0s</text>
+<line x1="0" y1="172.0" x2="720" y2="172.0" stroke="#eee" />
+<text x="-10" y="86.0" text-anchor="end" alignment-baseline="middle" font-family="sans-serif" font-size="10">0.0s</text>
+<line x1="0" y1="86.0" x2="720" y2="86.0" stroke="#eee" />
+<text x="-10" y="0.0" text-anchor="end" alignment-baseline="middle" font-family="sans-serif" font-size="10">0.0s</text>
+<line x1="0" y1="0.0" x2="720" y2="0.0" stroke="#eee" />
+<text x="-40" y="215.0" transform="rotate(-90, -40, 215.0)" text-anchor="middle" font-family="sans-serif" font-size="12">Setup Time</text>
+<rect x="1.7142857142857142" y="395.7303086956522" width="3.4285714285714284" height="34.26969130434782" fill="#e15759" />
+<rect x="5.142857142857142" y="340.2608695652174" width="3.4285714285714284" height="89.73913043478261" fill="#59a14f" />
+<rect x="8.571428571428571" y="355.2173913043478" width="3.4285714285714284" height="74.78260869565217" fill="#4e79a7" />
+<rect x="12.0" y="280.4347826086956" width="3.4285714285714284" height="149.56521739130434" fill="#f28e2b" />
+<text x="8.571428571428571" y="450" text-anchor="end" font-family="sans-serif" font-size="12" transform="rotate(-45, 8.571428571428571, 450)">Haskell-Mvars trips=1</text>
+<rect x="18.857142857142858" y="412.86513565217393" width="3.4285714285714284" height="17.13486434782609" fill="#e15759" />
+<rect x="22.285714285714285" y="344.0" width="3.4285714285714284" height="85.99999999999999" fill="#59a14f" />
+<rect x="25.714285714285715" y="355.2173913043478" width="3.4285714285714284" height="74.78260869565217" fill="#4e79a7" />
+<rect x="29.142857142857142" y="317.82608695652175" width="3.4285714285714284" height="112.17391304347825" fill="#f28e2b" />
+<text x="25.714285714285715" y="450" text-anchor="end" font-family="sans-serif" font-size="12" transform="rotate(-45, 25.714285714285715, 450)">Haskell-Channels trips=1</text>
+<rect x="36.0" y="411.6820747826087" width="3.4285714285714284" height="18.317925217391302" fill="#e15759" />
+<rect x="39.42857142857143" y="332.7826086956522" width="3.4285714285714284" height="97.21739130434783" fill="#59a14f" />
+<rect x="42.857142857142854" y="317.82608695652175" width="3.4285714285714284" height="112.17391304347825" fill="#4e79a7" />
+<rect x="46.285714285714285" y="317.82608695652175" width="3.4285714285714284" height="112.17391304347825" fill="#f28e2b" />
+<text x="42.857142857142854" y="450" text-anchor="end" font-family="sans-serif" font-size="12" transform="rotate(-45, 42.857142857142854, 450)">Rust trips=1</text>
+<rect x="53.142857142857146" y="412.86513565217393" width="3.4285714285714284" height="17.13486434782609" fill="#e15759" />
+<rect x="56.57142857142857" y="231.82608695652175" width="3.4285714285714284" height="198.17391304347825" fill="#59a14f" />
+<rect x="60.0" y="243.04347826086956" width="3.4285714285714284" height="186.95652173913044" fill="#4e79a7" />
+<rect x="63.42857142857143" y="205.6521739130435" width="3.4285714285714284" height="224.3478260869565" fill="#f28e2b" />
+<text x="60.0" y="450" text-anchor="end" font-family="sans-serif" font-size="12" transform="rotate(-45, 60.0, 450)">Erlang trips=1</text>
+<rect x="70.28571428571428" y="430.0" width="3.4285714285714284" height="0.0" fill="#e15759" />
+<rect x="73.71428571428571" y="205.6521739130435" width="3.4285714285714284" height="224.3478260869565" fill="#59a14f" />
+<rect x="77.14285714285714" y="205.6521739130435" width="3.4285714285714284" height="224.3478260869565" fill="#4e79a7" />
+<rect x="80.57142857142857" y="205.6521739130435" width="3.4285714285714284" height="224.3478260869565" fill="#f28e2b" />
+<text x="77.14285714285714" y="450" text-anchor="end" font-family="sans-serif" font-size="12" transform="rotate(-45, 77.14285714285714, 450)">Elixir trips=1</text>
+<rect x="87.42857142857142" y="398.9404643478261" width="3.4285714285714284" height="31.059535652173913" fill="#e15759" />
+<rect x="90.85714285714285" y="201.9130434782609" width="3.4285714285714284" height="228.0869565217391" fill="#59a14f" />
+<rect x="94.28571428571428" y="205.6521739130435" width="3.4285714285714284" height="224.3478260869565" fill="#4e79a7" />
+<rect x="97.71428571428571" y="149.56521739130432" width="3.4285714285714284" height="280.4347826086957" fill="#f28e2b" />
+<text x="94.28571428571428" y="450" text-anchor="end" font-family="sans-serif" font-size="12" transform="rotate(-45, 94.28571428571428, 450)">Go trips=1</text>
+<rect x="104.57142857142857" y="346.05674608695654" width="3.4285714285714284" height="83.94325391304349" fill="#e15759" />
+<rect x="108.0" y="115.91304347826087" width="3.4285714285714284" height="314.0869565217391" fill="#59a14f" />
+<rect x="111.42857142857143" y="130.8695652173913" width="3.4285714285714284" height="299.1304347826087" fill="#4e79a7" />
+<rect x="114.85714285714286" y="0.0" width="3.4285714285714284" height="430.0" fill="#f28e2b" />
+<text x="111.42857142857143" y="450" text-anchor="end" font-family="sans-serif" font-size="12" transform="rotate(-45, 111.42857142857143, 450)">Cpp trips=1</text>
+<rect x="121.71428571428571" y="430.0" width="3.4285714285714284" height="0.0" fill="#e15759" />
+<rect x="125.14285714285714" y="355.2173913043478" width="3.4285714285714284" height="74.78260869565217" fill="#59a14f" />
+<rect x="128.57142857142858" y="355.2173913043478" width="3.4285714285714284" height="74.78260869565217" fill="#4e79a7" />
+<rect x="132.0" y="355.2173913043478" width="3.4285714285714284" height="74.78260869565217" fill="#f28e2b" />
+<text x="128.57142857142858" y="450" text-anchor="end" font-family="sans-serif" font-size="12" transform="rotate(-45, 128.57142857142858, 450)">Haskell-Mvars trips=401</text>
+<rect x="138.85714285714286" y="430.0" width="3.4285714285714284" height="0.0" fill="#e15759" />
+<rect x="142.28571428571428" y="355.2173913043478" width="3.4285714285714284" height="74.78260869565217" fill="#59a14f" />
+<rect x="145.71428571428572" y="355.2173913043478" width="3.4285714285714284" height="74.78260869565217" fill="#4e79a7" />
+<rect x="149.14285714285714" y="355.2173913043478" width="3.4285714285714284" height="74.78260869565217" fill="#f28e2b" />
+<text x="145.71428571428572" y="450" text-anchor="end" font-family="sans-serif" font-size="12" transform="rotate(-45, 145.71428571428572, 450)">Haskell-Channels trips=401</text>
+<rect x="156.0" y="418.7826086956522" width="3.4285714285714284" height="11.217391304347826" fill="#e15759" />
+<rect x="159.42857142857142" y="321.5652173913044" width="3.4285714285714284" height="108.43478260869564" fill="#59a14f" />
+<rect x="162.85714285714286" y="317.82608695652175" width="3.4285714285714284" height="112.17391304347825" fill="#4e79a7" />
+<rect x="166.28571428571428" y="317.82608695652175" width="3.4285714285714284" height="112.17391304347825" fill="#f28e2b" />
+<text x="162.85714285714286" y="450" text-anchor="end" font-family="sans-serif" font-size="12" transform="rotate(-45, 162.85714285714286, 450)">Rust trips=401</text>
+<rect x="173.14285714285714" y="418.7826086956522" width="3.4285714285714284" height="11.217391304347826" fill="#e15759" />
+<rect x="176.57142857142856" y="239.30434782608697" width="3.4285714285714284" height="190.69565217391303" fill="#59a14f" />
+<rect x="180.0" y="243.04347826086956" width="3.4285714285714284" height="186.95652173913044" fill="#4e79a7" />
+<rect x="183.42857142857142" y="224.3478260869565" width="3.4285714285714284" height="205.6521739130435" fill="#f28e2b" />
+<text x="180.0" y="450" text-anchor="end" font-family="sans-serif" font-size="12" transform="rotate(-45, 180.0, 450)">Erlang trips=401</text>
+<rect x="190.28571428571428" y="418.7826086956522" width="3.4285714285714284" height="11.217391304347826" fill="#e15759" />
+<rect x="193.7142857142857" y="209.39130434782606" width="3.4285714285714284" height="220.60869565217394" fill="#59a14f" />
+<rect x="197.14285714285714" y="205.6521739130435" width="3.4285714285714284" height="224.3478260869565" fill="#4e79a7" />
+<rect x="200.57142857142856" y="205.6521739130435" width="3.4285714285714284" height="224.3478260869565" fill="#f28e2b" />
+<text x="197.14285714285714" y="450" text-anchor="end" font-family="sans-serif" font-size="12" transform="rotate(-45, 197.14285714285714, 450)">Elixir trips=401</text>
+<rect x="207.42857142857144" y="409.8641843478261" width="3.4285714285714284" height="20.135815652173914" fill="#e15759" />
+<rect x="210.85714285714286" y="209.39130434782606" width="3.4285714285714284" height="220.60869565217394" fill="#59a14f" />
+<rect x="214.2857142857143" y="205.6521739130435" width="3.4285714285714284" height="224.3478260869565" fill="#4e79a7" />
+<rect x="217.71428571428572" y="186.95652173913047" width="3.4285714285714284" height="243.04347826086953" fill="#f28e2b" />
+<text x="214.2857142857143" y="450" text-anchor="end" font-family="sans-serif" font-size="12" transform="rotate(-45, 214.2857142857143, 450)">Go trips=401</text>
+<rect x="224.57142857142858" y="412.86513565217393" width="3.4285714285714284" height="17.13486434782609" fill="#e15759" />
+<rect x="228.0" y="142.08695652173913" width="3.4285714285714284" height="287.9130434782609" fill="#59a14f" />
+<rect x="231.42857142857144" y="130.8695652173913" width="3.4285714285714284" height="299.1304347826087" fill="#4e79a7" />
+<rect x="234.85714285714286" y="130.8695652173913" width="3.4285714285714284" height="299.1304347826087" fill="#f28e2b" />
+<text x="231.42857142857144" y="450" text-anchor="end" font-family="sans-serif" font-size="12" transform="rotate(-45, 231.42857142857144, 450)">Cpp trips=401</text>
+<rect x="241.71428571428572" y="430.0" width="3.4285714285714284" height="0.0" fill="#e15759" />
+<rect x="245.14285714285714" y="355.2173913043478" width="3.4285714285714284" height="74.78260869565217" fill="#59a14f" />
+<rect x="248.57142857142858" y="355.2173913043478" width="3.4285714285714284" height="74.78260869565217" fill="#4e79a7" />
+<rect x="252.0" y="355.2173913043478" width="3.4285714285714284" height="74.78260869565217" fill="#f28e2b" />
+<text x="248.57142857142858" y="450" text-anchor="end" font-family="sans-serif" font-size="12" transform="rotate(-45, 248.57142857142858, 450)">Haskell-Mvars trips=801</text>
+<rect x="258.85714285714283" y="418.7826086956522" width="3.4285714285714284" height="11.217391304347826" fill="#e15759" />
+<rect x="262.2857142857143" y="351.47826086956525" width="3.4285714285714284" height="78.52173913043478" fill="#59a14f" />
+<rect x="265.71428571428567" y="355.2173913043478" width="3.4285714285714284" height="74.78260869565217" fill="#4e79a7" />
+<rect x="269.1428571428571" y="336.52173913043475" width="3.4285714285714284" height="93.47826086956522" fill="#f28e2b" />
+<text x="265.71428571428567" y="450" text-anchor="end" font-family="sans-serif" font-size="12" transform="rotate(-45, 265.71428571428567, 450)">Haskell-Channels trips=801</text>
+<rect x="276.0" y="412.86513565217393" width="3.4285714285714284" height="17.13486434782609" fill="#e15759" />
+<rect x="279.42857142857144" y="329.04347826086956" width="3.4285714285714284" height="100.95652173913044" fill="#59a14f" />
+<rect x="282.85714285714283" y="317.82608695652175" width="3.4285714285714284" height="112.17391304347825" fill="#4e79a7" />
+<rect x="286.2857142857143" y="317.82608695652175" width="3.4285714285714284" height="112.17391304347825" fill="#f28e2b" />
+<text x="282.85714285714283" y="450" text-anchor="end" font-family="sans-serif" font-size="12" transform="rotate(-45, 282.85714285714283, 450)">Rust trips=801</text>
+<rect x="293.14285714285717" y="412.86513565217393" width="3.4285714285714284" height="17.13486434782609" fill="#e15759" />
+<rect x="296.5714285714286" y="231.82608695652175" width="3.4285714285714284" height="198.17391304347825" fill="#59a14f" />
+<rect x="300.0" y="243.04347826086956" width="3.4285714285714284" height="186.95652173913044" fill="#4e79a7" />
+<rect x="303.42857142857144" y="205.6521739130435" width="3.4285714285714284" height="224.3478260869565" fill="#f28e2b" />
+<text x="300.0" y="450" text-anchor="end" font-family="sans-serif" font-size="12" transform="rotate(-45, 300.0, 450)">Erlang trips=801</text>
+<rect x="310.2857142857143" y="415.04347826086956" width="3.4285714285714284" height="14.956521739130435" fill="#e15759" />
+<rect x="313.7142857142857" y="213.13043478260872" width="3.4285714285714284" height="216.86956521739128" fill="#59a14f" />
+<rect x="317.1428571428571" y="205.6521739130435" width="3.4285714285714284" height="224.3478260869565" fill="#4e79a7" />
+<rect x="320.57142857142856" y="205.6521739130435" width="3.4285714285714284" height="224.3478260869565" fill="#f28e2b" />
+<text x="317.1428571428571" y="450" text-anchor="end" font-family="sans-serif" font-size="12" transform="rotate(-45, 317.1428571428571, 450)">Elixir trips=801</text>
+<rect x="327.42857142857144" y="406.0578991304348" width="3.4285714285714284" height="23.942100869565216" fill="#e15759" />
+<rect x="330.8571428571429" y="216.86956521739128" width="3.4285714285714284" height="213.13043478260872" fill="#59a14f" />
+<rect x="334.2857142857143" y="205.6521739130435" width="3.4285714285714284" height="224.3478260869565" fill="#4e79a7" />
+<rect x="337.7142857142857" y="186.95652173913047" width="3.4285714285714284" height="243.04347826086953" fill="#f28e2b" />
+<text x="334.2857142857143" y="450" text-anchor="end" font-family="sans-serif" font-size="12" transform="rotate(-45, 334.2857142857143, 450)">Go trips=801</text>
+<rect x="344.57142857142856" y="415.04347826086956" width="3.4285714285714284" height="14.956521739130435" fill="#e15759" />
+<rect x="348.0" y="138.34782608695656" width="3.4285714285714284" height="291.65217391304344" fill="#59a14f" />
+<rect x="351.4285714285714" y="130.8695652173913" width="3.4285714285714284" height="299.1304347826087" fill="#4e79a7" />
+<rect x="354.85714285714283" y="130.8695652173913" width="3.4285714285714284" height="299.1304347826087" fill="#f28e2b" />
+<text x="351.4285714285714" y="450" text-anchor="end" font-family="sans-serif" font-size="12" transform="rotate(-45, 351.4285714285714, 450)">Cpp trips=801</text>
+<rect x="361.7142857142857" y="418.7826086956522" width="3.4285714285714284" height="11.217391304347826" fill="#e15759" />
+<rect x="365.14285714285717" y="351.47826086956525" width="3.4285714285714284" height="78.52173913043478" fill="#59a14f" />
+<rect x="368.57142857142856" y="355.2173913043478" width="3.4285714285714284" height="74.78260869565217" fill="#4e79a7" />
+<rect x="372.0" y="336.52173913043475" width="3.4285714285714284" height="93.47826086956522" fill="#f28e2b" />
+<text x="368.57142857142856" y="450" text-anchor="end" font-family="sans-serif" font-size="12" transform="rotate(-45, 368.57142857142856, 450)">Haskell-Mvars trips=1201</text>
+<rect x="378.85714285714283" y="430.0" width="3.4285714285714284" height="0.0" fill="#e15759" />
+<rect x="382.2857142857143" y="355.2173913043478" width="3.4285714285714284" height="74.78260869565217" fill="#59a14f" />
+<rect x="385.71428571428567" y="355.2173913043478" width="3.4285714285714284" height="74.78260869565217" fill="#4e79a7" />
+<rect x="389.1428571428571" y="355.2173913043478" width="3.4285714285714284" height="74.78260869565217" fill="#f28e2b" />
+<text x="385.71428571428567" y="450" text-anchor="end" font-family="sans-serif" font-size="12" transform="rotate(-45, 385.71428571428567, 450)">Haskell-Channels trips=1201</text>
+<rect x="396.0" y="418.7826086956522" width="3.4285714285714284" height="11.217391304347826" fill="#e15759" />
+<rect x="399.42857142857144" y="321.5652173913044" width="3.4285714285714284" height="108.43478260869564" fill="#59a14f" />
+<rect x="402.85714285714283" y="317.82608695652175" width="3.4285714285714284" height="112.17391304347825" fill="#4e79a7" />
+<rect x="406.2857142857143" y="317.82608695652175" width="3.4285714285714284" height="112.17391304347825" fill="#f28e2b" />
+<text x="402.85714285714283" y="450" text-anchor="end" font-family="sans-serif" font-size="12" transform="rotate(-45, 402.85714285714283, 450)">Rust trips=1201</text>
+<rect x="413.14285714285717" y="418.7826086956522" width="3.4285714285714284" height="11.217391304347826" fill="#e15759" />
+<rect x="416.5714285714286" y="239.30434782608697" width="3.4285714285714284" height="190.69565217391303" fill="#59a14f" />
+<rect x="420.0" y="243.04347826086956" width="3.4285714285714284" height="186.95652173913044" fill="#4e79a7" />
+<rect x="423.42857142857144" y="224.3478260869565" width="3.4285714285714284" height="205.6521739130435" fill="#f28e2b" />
+<text x="420.0" y="450" text-anchor="end" font-family="sans-serif" font-size="12" transform="rotate(-45, 420.0, 450)">Erlang trips=1201</text>
+<rect x="430.2857142857143" y="412.86513565217393" width="3.4285714285714284" height="17.13486434782609" fill="#e15759" />
+<rect x="433.7142857142857" y="216.86956521739128" width="3.4285714285714284" height="213.13043478260872" fill="#59a14f" />
+<rect x="437.1428571428571" y="205.6521739130435" width="3.4285714285714284" height="224.3478260869565" fill="#4e79a7" />
+<rect x="440.57142857142856" y="205.6521739130435" width="3.4285714285714284" height="224.3478260869565" fill="#f28e2b" />
+<text x="437.1428571428571" y="450" text-anchor="end" font-family="sans-serif" font-size="12" transform="rotate(-45, 437.1428571428571, 450)">Elixir trips=1201</text>
+<rect x="447.42857142857144" y="418.7826086956522" width="3.4285714285714284" height="11.217391304347826" fill="#e15759" />
+<rect x="450.8571428571429" y="201.9130434782609" width="3.4285714285714284" height="228.0869565217391" fill="#59a14f" />
+<rect x="454.2857142857143" y="205.6521739130435" width="3.4285714285714284" height="224.3478260869565" fill="#4e79a7" />
+<rect x="457.7142857142857" y="186.95652173913047" width="3.4285714285714284" height="243.04347826086953" fill="#f28e2b" />
+<text x="454.2857142857143" y="450" text-anchor="end" font-family="sans-serif" font-size="12" transform="rotate(-45, 454.2857142857143, 450)">Go trips=1201</text>
+<rect x="464.57142857142856" y="418.7826086956522" width="3.4285714285714284" height="11.217391304347826" fill="#e15759" />
+<rect x="468.0" y="134.60869565217388" width="3.4285714285714284" height="295.3913043478261" fill="#59a14f" />
+<rect x="471.4285714285714" y="130.8695652173913" width="3.4285714285714284" height="299.1304347826087" fill="#4e79a7" />
+<rect x="474.85714285714283" y="130.8695652173913" width="3.4285714285714284" height="299.1304347826087" fill="#f28e2b" />
+<text x="471.4285714285714" y="450" text-anchor="end" font-family="sans-serif" font-size="12" transform="rotate(-45, 471.4285714285714, 450)">Cpp trips=1201</text>
+<rect x="481.7142857142857" y="430.0" width="3.4285714285714284" height="0.0" fill="#e15759" />
+<rect x="485.14285714285717" y="355.2173913043478" width="3.4285714285714284" height="74.78260869565217" fill="#59a14f" />
+<rect x="488.57142857142856" y="355.2173913043478" width="3.4285714285714284" height="74.78260869565217" fill="#4e79a7" />
+<rect x="492.0" y="355.2173913043478" width="3.4285714285714284" height="74.78260869565217" fill="#f28e2b" />
+<text x="488.57142857142856" y="450" text-anchor="end" font-family="sans-serif" font-size="12" transform="rotate(-45, 488.57142857142856, 450)">Haskell-Mvars trips=1601</text>
+<rect x="498.85714285714283" y="411.6820747826087" width="3.4285714285714284" height="18.317925217391302" fill="#e15759" />
+<rect x="502.2857142857143" y="340.2608695652174" width="3.4285714285714284" height="89.73913043478261" fill="#59a14f" />
+<rect x="505.71428571428567" y="355.2173913043478" width="3.4285714285714284" height="74.78260869565217" fill="#4e79a7" />
+<rect x="509.1428571428571" y="317.82608695652175" width="3.4285714285714284" height="112.17391304347825" fill="#f28e2b" />
+<text x="505.71428571428567" y="450" text-anchor="end" font-family="sans-serif" font-size="12" transform="rotate(-45, 505.71428571428567, 450)">Haskell-Channels trips=1601</text>
+<rect x="515.9999999999999" y="418.7826086956522" width="3.4285714285714284" height="11.217391304347826" fill="#e15759" />
+<rect x="519.4285714285713" y="321.5652173913044" width="3.4285714285714284" height="108.43478260869564" fill="#59a14f" />
+<rect x="522.8571428571428" y="317.82608695652175" width="3.4285714285714284" height="112.17391304347825" fill="#4e79a7" />
+<rect x="526.2857142857142" y="317.82608695652175" width="3.4285714285714284" height="112.17391304347825" fill="#f28e2b" />
+<text x="522.8571428571428" y="450" text-anchor="end" font-family="sans-serif" font-size="12" transform="rotate(-45, 522.8571428571428, 450)">Rust trips=1601</text>
+<rect x="533.1428571428571" y="430.0" width="3.4285714285714284" height="0.0" fill="#e15759" />
+<rect x="536.5714285714286" y="243.04347826086956" width="3.4285714285714284" height="186.95652173913044" fill="#59a14f" />
+<rect x="540.0" y="243.04347826086956" width="3.4285714285714284" height="186.95652173913044" fill="#4e79a7" />
+<rect x="543.4285714285714" y="243.04347826086956" width="3.4285714285714284" height="186.95652173913044" fill="#f28e2b" />
+<text x="540.0" y="450" text-anchor="end" font-family="sans-serif" font-size="12" transform="rotate(-45, 540.0, 450)">Erlang trips=1601</text>
+<rect x="550.2857142857142" y="406.3516452173913" width="3.4285714285714284" height="23.648354782608696" fill="#e15759" />
+<rect x="553.7142857142857" y="205.6521739130435" width="3.4285714285714284" height="224.3478260869565" fill="#59a14f" />
+<rect x="557.1428571428571" y="205.6521739130435" width="3.4285714285714284" height="224.3478260869565" fill="#4e79a7" />
+<rect x="560.5714285714286" y="168.26086956521738" width="3.4285714285714284" height="261.7391304347826" fill="#f28e2b" />
+<text x="557.1428571428571" y="450" text-anchor="end" font-family="sans-serif" font-size="12" transform="rotate(-45, 557.1428571428571, 450)">Elixir trips=1601</text>
+<rect x="567.4285714285713" y="406.3516452173913" width="3.4285714285714284" height="23.648354782608696" fill="#e15759" />
+<rect x="570.8571428571428" y="205.6521739130435" width="3.4285714285714284" height="224.3478260869565" fill="#59a14f" />
+<rect x="574.2857142857142" y="205.6521739130435" width="3.4285714285714284" height="224.3478260869565" fill="#4e79a7" />
+<rect x="577.7142857142857" y="168.26086956521738" width="3.4285714285714284" height="261.7391304347826" fill="#f28e2b" />
+<text x="574.2857142857142" y="450" text-anchor="end" font-family="sans-serif" font-size="12" transform="rotate(-45, 574.2857142857142, 450)">Go trips=1601</text>
+<rect x="584.5714285714286" y="411.30434782608694" width="3.4285714285714284" height="18.695652173913043" fill="#e15759" />
+<rect x="588.0" y="149.56521739130432" width="3.4285714285714284" height="280.4347826086957" fill="#59a14f" />
+<rect x="591.4285714285714" y="149.56521739130432" width="3.4285714285714284" height="280.4347826086957" fill="#4e79a7" />
+<rect x="594.8571428571429" y="130.8695652173913" width="3.4285714285714284" height="299.1304347826087" fill="#f28e2b" />
+<text x="591.4285714285714" y="450" text-anchor="end" font-family="sans-serif" font-size="12" transform="rotate(-45, 591.4285714285714, 450)">Cpp trips=1601</text>
+<rect x="601.7142857142857" y="418.7826086956522" width="3.4285714285714284" height="11.217391304347826" fill="#e15759" />
+<rect x="605.1428571428571" y="351.47826086956525" width="3.4285714285714284" height="78.52173913043478" fill="#59a14f" />
+<rect x="608.5714285714286" y="355.2173913043478" width="3.4285714285714284" height="74.78260869565217" fill="#4e79a7" />
+<rect x="612.0" y="336.52173913043475" width="3.4285714285714284" height="93.47826086956522" fill="#f28e2b" />
+<text x="608.5714285714286" y="450" text-anchor="end" font-family="sans-serif" font-size="12" transform="rotate(-45, 608.5714285714286, 450)">Haskell-Mvars trips=2001</text>
+<rect x="618.8571428571428" y="415.04347826086956" width="3.4285714285714284" height="14.956521739130435" fill="#e15759" />
+<rect x="622.2857142857142" y="347.7391304347826" width="3.4285714285714284" height="82.26086956521739" fill="#59a14f" />
+<rect x="625.7142857142857" y="355.2173913043478" width="3.4285714285714284" height="74.78260869565217" fill="#4e79a7" />
+<rect x="629.1428571428571" y="317.82608695652175" width="3.4285714285714284" height="112.17391304347825" fill="#f28e2b" />
+<text x="625.7142857142857" y="450" text-anchor="end" font-family="sans-serif" font-size="12" transform="rotate(-45, 625.7142857142857, 450)">Haskell-Channels trips=2001</text>
+<rect x="635.9999999999999" y="418.7826086956522" width="3.4285714285714284" height="11.217391304347826" fill="#e15759" />
+<rect x="639.4285714285713" y="321.5652173913044" width="3.4285714285714284" height="108.43478260869564" fill="#59a14f" />
+<rect x="642.8571428571428" y="317.82608695652175" width="3.4285714285714284" height="112.17391304347825" fill="#4e79a7" />
+<rect x="646.2857142857142" y="317.82608695652175" width="3.4285714285714284" height="112.17391304347825" fill="#f28e2b" />
+<text x="642.8571428571428" y="450" text-anchor="end" font-family="sans-serif" font-size="12" transform="rotate(-45, 642.8571428571428, 450)">Rust trips=2001</text>
+<rect x="653.1428571428571" y="430.0" width="3.4285714285714284" height="0.0" fill="#e15759" />
+<rect x="656.5714285714286" y="243.04347826086956" width="3.4285714285714284" height="186.95652173913044" fill="#59a14f" />
+<rect x="660.0" y="243.04347826086956" width="3.4285714285714284" height="186.95652173913044" fill="#4e79a7" />
+<rect x="663.4285714285714" y="243.04347826086956" width="3.4285714285714284" height="186.95652173913044" fill="#f28e2b" />
+<text x="660.0" y="450" text-anchor="end" font-family="sans-serif" font-size="12" transform="rotate(-45, 660.0, 450)">Erlang trips=2001</text>
+<rect x="670.2857142857142" y="430.0" width="3.4285714285714284" height="0.0" fill="#e15759" />
+<rect x="673.7142857142857" y="205.6521739130435" width="3.4285714285714284" height="224.3478260869565" fill="#59a14f" />
+<rect x="677.1428571428571" y="205.6521739130435" width="3.4285714285714284" height="224.3478260869565" fill="#4e79a7" />
+<rect x="680.5714285714286" y="205.6521739130435" width="3.4285714285714284" height="224.3478260869565" fill="#f28e2b" />
+<text x="677.1428571428571" y="450" text-anchor="end" font-family="sans-serif" font-size="12" transform="rotate(-45, 677.1428571428571, 450)">Elixir trips=2001</text>
+<rect x="687.4285714285713" y="412.86513565217393" width="3.4285714285714284" height="17.13486434782609" fill="#e15759" />
+<rect x="690.8571428571428" y="216.86956521739128" width="3.4285714285714284" height="213.13043478260872" fill="#59a14f" />
+<rect x="694.2857142857142" y="205.6521739130435" width="3.4285714285714284" height="224.3478260869565" fill="#4e79a7" />
+<rect x="697.7142857142857" y="205.6521739130435" width="3.4285714285714284" height="224.3478260869565" fill="#f28e2b" />
+<text x="694.2857142857142" y="450" text-anchor="end" font-family="sans-serif" font-size="12" transform="rotate(-45, 694.2857142857142, 450)">Go trips=2001</text>
+<rect x="704.5714285714286" y="415.04347826086956" width="3.4285714285714284" height="14.956521739130435" fill="#e15759" />
+<rect x="708.0" y="138.34782608695656" width="3.4285714285714284" height="291.65217391304344" fill="#59a14f" />
+<rect x="711.4285714285714" y="130.8695652173913" width="3.4285714285714284" height="299.1304347826087" fill="#4e79a7" />
+<rect x="714.8571428571429" y="130.8695652173913" width="3.4285714285714284" height="299.1304347826087" fill="#f28e2b" />
+<text x="711.4285714285714" y="450" text-anchor="end" font-family="sans-serif" font-size="12" transform="rotate(-45, 711.4285714285714, 450)">Cpp trips=2001</text>
+<rect x="170" y="510" width="15" height="15" fill="#e15759" />
+<text x="190" y="522" font-family="sans-serif" font-size="12">Setup Time RMS</text>
+<rect x="370" y="510" width="15" height="15" fill="#59a14f" />
+<text x="390" y="522" font-family="sans-serif" font-size="12">Setup Time Mean</text>
+<rect x="170" y="530" width="15" height="15" fill="#4e79a7" />
+<text x="190" y="542" font-family="sans-serif" font-size="12">Setup Time Median</text>
+<rect x="370" y="530" width="15" height="15" fill="#f28e2b" />
+<text x="390" y="542" font-family="sans-serif" font-size="12">Setup Time 98th Percentile</text>
+</g>
+</svg>
+
+<svg width="800" height="600" xmlns="http://www.w3.org/2000/svg">
+<rect width="100%" height="100%" fill="white" />
+<g transform="translate(60, 50)"><text x="360.0" y="-20" text-anchor="middle" font-family="sans-serif" font-size="20">O-Ring Benchmark Runtime Results</text>
+<text x="360.0" y="-2" text-anchor="middle" font-family="sans-serif" font-size="12">#nodes: 10000, iterations: 10</text>
+<line x1="0" y1="0" x2="0" y2="430" stroke="black" />
+<text x="-10" y="430.0" text-anchor="end" alignment-baseline="middle" font-family="sans-serif" font-size="10">0.0s</text>
+<line x1="0" y1="430.0" x2="720" y2="430.0" stroke="#eee" />
+<text x="-10" y="344.0" text-anchor="end" alignment-baseline="middle" font-family="sans-serif" font-size="10">1.3s</text>
+<line x1="0" y1="344.0" x2="720" y2="344.0" stroke="#eee" />
+<text x="-10" y="258.0" text-anchor="end" alignment-baseline="middle" font-family="sans-serif" font-size="10">2.6s</text>
+<line x1="0" y1="258.0" x2="720" y2="258.0" stroke="#eee" />
+<text x="-10" y="172.0" text-anchor="end" alignment-baseline="middle" font-family="sans-serif" font-size="10">3.9s</text>
+<line x1="0" y1="172.0" x2="720" y2="172.0" stroke="#eee" />
+<text x="-10" y="86.0" text-anchor="end" alignment-baseline="middle" font-family="sans-serif" font-size="10">5.2s</text>
+<line x1="0" y1="86.0" x2="720" y2="86.0" stroke="#eee" />
+<text x="-10" y="0.0" text-anchor="end" alignment-baseline="middle" font-family="sans-serif" font-size="10">6.5s</text>
+<line x1="0" y1="0.0" x2="720" y2="0.0" stroke="#eee" />
+<text x="-40" y="215.0" transform="rotate(-90, -40, 215.0)" text-anchor="middle" font-family="sans-serif" font-size="12">Time to Finish</text>
+<rect x="1.7142857142857142" y="429.9670220108904" width="3.4285714285714284" height="0.03297798910959429" fill="#e15759" />
+<rect x="5.142857142857142" y="429.9670220108904" width="3.4285714285714284" height="0.03297798910959429" fill="#59a14f" />
+<rect x="8.571428571428571" y="429.9670220108904" width="3.4285714285714284" height="0.03297798910959429" fill="#4e79a7" />
+<rect x="12.0" y="429.93404402178084" width="3.4285714285714284" height="0.06595597821918858" fill="#f28e2b" />
+<text x="8.571428571428571" y="450" text-anchor="end" font-family="sans-serif" font-size="12" transform="rotate(-45, 8.571428571428571, 450)">Rust trips=1</text>
+<rect x="18.857142857142858" y="430.0" width="3.4285714285714284" height="0.0" fill="#e15759" />
+<rect x="22.285714285714285" y="429.93404402178084" width="3.4285714285714284" height="0.06595597821918858" fill="#59a14f" />
+<rect x="25.714285714285715" y="429.93404402178084" width="3.4285714285714284" height="0.06595597821918858" fill="#4e79a7" />
+<rect x="29.142857142857142" y="429.93404402178084" width="3.4285714285714284" height="0.06595597821918858" fill="#f28e2b" />
+<text x="25.714285714285715" y="450" text-anchor="end" font-family="sans-serif" font-size="12" transform="rotate(-45, 25.714285714285715, 450)">Haskell-Mvars trips=1</text>
+<rect x="36.0" y="430.0" width="3.4285714285714284" height="0.0" fill="#e15759" />
+<rect x="39.42857142857143" y="429.93404402178084" width="3.4285714285714284" height="0.06595597821918858" fill="#59a14f" />
+<rect x="42.857142857142854" y="429.93404402178084" width="3.4285714285714284" height="0.06595597821918858" fill="#4e79a7" />
+<rect x="46.285714285714285" y="429.93404402178084" width="3.4285714285714284" height="0.06595597821918858" fill="#f28e2b" />
+<text x="42.857142857142854" y="450" text-anchor="end" font-family="sans-serif" font-size="12" transform="rotate(-45, 42.857142857142854, 450)">Haskell-Channels trips=1</text>
+<rect x="53.142857142857146" y="430.0" width="3.4285714285714284" height="0.0" fill="#e15759" />
+<rect x="56.57142857142857" y="429.8680880435616" width="3.4285714285714284" height="0.13191195643837716" fill="#59a14f" />
+<rect x="60.0" y="429.8680880435616" width="3.4285714285714284" height="0.13191195643837716" fill="#4e79a7" />
+<rect x="63.42857142857143" y="429.8680880435616" width="3.4285714285714284" height="0.13191195643837716" fill="#f28e2b" />
+<text x="60.0" y="450" text-anchor="end" font-family="sans-serif" font-size="12" transform="rotate(-45, 60.0, 450)">Go trips=1</text>
+<rect x="70.28571428571428" y="429.9577675956745" width="3.4285714285714284" height="0.04223240432548508" fill="#e15759" />
+<rect x="73.71428571428571" y="429.84830125009586" width="3.4285714285714284" height="0.15169874990413373" fill="#59a14f" />
+<rect x="77.14285714285714" y="429.8680880435616" width="3.4285714285714284" height="0.13191195643837716" fill="#4e79a7" />
+<rect x="80.57142857142857" y="429.76915407623284" width="3.4285714285714284" height="0.23084592376716004" fill="#f28e2b" />
+<text x="77.14285714285714" y="450" text-anchor="end" font-family="sans-serif" font-size="12" transform="rotate(-45, 77.14285714285714, 450)">Cpp trips=1</text>
+<rect x="87.42857142857142" y="429.98021320653424" width="3.4285714285714284" height="0.019786793465756576" fill="#e15759" />
+<rect x="90.85714285714285" y="429.7295804893013" width="3.4285714285714284" height="0.2704195106986732" fill="#59a14f" />
+<rect x="94.28571428571428" y="429.7361760871232" width="3.4285714285714284" height="0.26382391287675433" fill="#4e79a7" />
+<rect x="97.71428571428571" y="429.7031980980137" width="3.4285714285714284" height="0.29680190198634865" fill="#f28e2b" />
+<text x="94.28571428571428" y="450" text-anchor="end" font-family="sans-serif" font-size="12" transform="rotate(-45, 94.28571428571428, 450)">Elixir trips=1</text>
+<rect x="104.57142857142857" y="430.0" width="3.4285714285714284" height="0.0" fill="#e15759" />
+<rect x="108.0" y="429.7361760871232" width="3.4285714285714284" height="0.26382391287675433" fill="#59a14f" />
+<rect x="111.42857142857143" y="429.7361760871232" width="3.4285714285714284" height="0.26382391287675433" fill="#4e79a7" />
+<rect x="114.85714285714286" y="429.7361760871232" width="3.4285714285714284" height="0.26382391287675433" fill="#f28e2b" />
+<text x="111.42857142857143" y="450" text-anchor="end" font-family="sans-serif" font-size="12" transform="rotate(-45, 111.42857142857143, 450)">Erlang trips=1</text>
+<rect x="121.71428571428571" y="429.7719029235371" width="3.4285714285714284" height="0.22809707646291894" fill="#e15759" />
+<rect x="125.14285714285714" y="414.553109901066" width="3.4285714285714284" height="15.446890098933967" fill="#59a14f" />
+<rect x="128.57142857142858" y="414.5663010967099" width="3.4285714285714284" height="15.43369890329013" fill="#4e79a7" />
+<rect x="132.0" y="414.23652120561394" width="3.4285714285714284" height="15.763478794386073" fill="#f28e2b" />
+<text x="128.57142857142858" y="450" text-anchor="end" font-family="sans-serif" font-size="12" transform="rotate(-45, 128.57142857142858, 450)">Haskell-Mvars trips=401</text>
+<rect x="138.85714285714286" y="429.74041481401946" width="3.4285714285714284" height="0.25958518598051994" fill="#e15759" />
+<rect x="142.28571428571428" y="407.5156070250786" width="3.4285714285714284" height="22.48439297492139" fill="#59a14f" />
+<rect x="145.71428571428572" y="407.64092338369505" width="3.4285714285714284" height="22.35907661630493" fill="#4e79a7" />
+<rect x="149.14285714285714" y="407.0143415906128" width="3.4285714285714284" height="22.985658409387224" fill="#f28e2b" />
+<text x="145.71428571428572" y="450" text-anchor="end" font-family="sans-serif" font-size="12" transform="rotate(-45, 145.71428571428572, 450)">Rust trips=401</text>
+<rect x="156.0" y="429.63461337832655" width="3.4285714285714284" height="0.36538662167344127" fill="#e15759" />
+<rect x="159.42857142857142" y="392.80742388219954" width="3.4285714285714284" height="37.19257611780044" fill="#59a14f" />
+<rect x="162.85714285714286" y="392.8997622517064" width="3.4285714285714284" height="37.10023774829358" fill="#4e79a7" />
+<rect x="166.28571428571428" y="392.1742464912953" width="3.4285714285714284" height="37.82575350870465" fill="#f28e2b" />
+<text x="162.85714285714286" y="450" text-anchor="end" font-family="sans-serif" font-size="12" transform="rotate(-45, 162.85714285714286, 450)">Cpp trips=401</text>
+<rect x="173.14285714285714" y="429.4723521742465" width="3.4285714285714284" height="0.5276478257535087" fill="#e15759" />
+<rect x="176.57142857142856" y="391.02001687245956" width="3.4285714285714284" height="38.97998312754046" fill="#59a14f" />
+<rect x="180.0" y="391.1519288288979" width="3.4285714285714284" height="38.84807117110208" fill="#4e79a7" />
+<rect x="183.42857142857142" y="390.1955671447197" width="3.4285714285714284" height="39.80443285528031" fill="#f28e2b" />
+<text x="180.0" y="450" text-anchor="end" font-family="sans-serif" font-size="12" transform="rotate(-45, 180.0, 450)">Haskell-Channels trips=401</text>
+<rect x="190.28571428571428" y="429.4176419541376" width="3.4285714285714284" height="0.5823580458624128" fill="#e15759" />
+<rect x="193.7142857142857" y="371.61576808037427" width="3.4285714285714284" height="58.38423191962575" fill="#59a14f" />
+<rect x="197.14285714285714" y="371.5959812869085" width="3.4285714285714284" height="58.4040187130915" fill="#4e79a7" />
+<rect x="200.57142857142856" y="370.8374875373878" width="3.4285714285714284" height="59.16251246261217" fill="#f28e2b" />
+<text x="197.14285714285714" y="450" text-anchor="end" font-family="sans-serif" font-size="12" transform="rotate(-45, 197.14285714285714, 450)">Go trips=401</text>
+<rect x="207.42857142857144" y="428.7236367942327" width="3.4285714285714284" height="1.2763632057673135" fill="#e15759" />
+<rect x="210.85714285714286" y="359.8821995551806" width="3.4285714285714284" height="70.11780044481938" fill="#59a14f" />
+<rect x="214.2857142857143" y="360.2185750440985" width="3.4285714285714284" height="69.78142495590153" fill="#4e79a7" />
+<rect x="217.71428571428572" y="357.8111818390981" width="3.4285714285714284" height="72.18881816090192" fill="#f28e2b" />
+<text x="214.2857142857143" y="450" text-anchor="end" font-family="sans-serif" font-size="12" transform="rotate(-45, 214.2857142857143, 450)">Erlang trips=401</text>
+<rect x="224.57142857142858" y="429.2472923046246" width="3.4285714285714284" height="0.7527076953754123" fill="#e15759" />
+<rect x="228.0" y="359.92836873993406" width="3.4285714285714284" height="70.07163126006596" fill="#59a14f" />
+<rect x="231.42857142857144" y="360.15261906587926" width="3.4285714285714284" height="69.84738093412072" fill="#4e79a7" />
+<rect x="234.85714285714286" y="358.73456553416673" width="3.4285714285714284" height="71.26543446583327" fill="#f28e2b" />
+<text x="231.42857142857144" y="450" text-anchor="end" font-family="sans-serif" font-size="12" transform="rotate(-45, 231.42857142857144, 450)">Elixir trips=401</text>
+<rect x="241.71428571428572" y="429.63748206764325" width="3.4285714285714284" height="0.3625179323567759" fill="#e15759" />
+<rect x="245.14285714285714" y="393.67804279469283" width="3.4285714285714284" height="36.32195720530716" fill="#59a14f" />
+<rect x="248.57142857142858" y="393.79016795766546" width="3.4285714285714284" height="36.20983204233453" fill="#4e79a7" />
+<rect x="252.0" y="393.097630186364" width="3.4285714285714284" height="36.902369813636014" fill="#f28e2b" />
+<text x="248.57142857142858" y="450" text-anchor="end" font-family="sans-serif" font-size="12" transform="rotate(-45, 248.57142857142858, 450)">Haskell-Mvars trips=801</text>
+<rect x="258.85714285714283" y="429.2017146790398" width="3.4285714285714284" height="0.7982853209601963" fill="#e15759" />
+<rect x="262.2857142857143" y="385.1433392131298" width="3.4285714285714284" height="44.85666078687016" fill="#59a14f" />
+<rect x="265.71428571428567" y="385.38078073471894" width="3.4285714285714284" height="44.61921926528108" fill="#4e79a7" />
+<rect x="269.1428571428571" y="383.96272720300635" width="3.4285714285714284" height="46.03727279699363" fill="#f28e2b" />
+<text x="265.71428571428567" y="450" text-anchor="end" font-family="sans-serif" font-size="12" transform="rotate(-45, 265.71428571428567, 450)">Rust trips=801</text>
+<rect x="276.0" y="428.1817670128077" width="3.4285714285714284" height="1.8182329871922693" fill="#e15759" />
+<rect x="279.42857142857144" y="354.8629496127004" width="3.4285714285714284" height="75.13705038729964" fill="#59a14f" />
+<rect x="282.85714285714283" y="355.70059053608406" width="3.4285714285714284" height="74.29940946391595" fill="#4e79a7" />
+<rect x="286.2857142857143" y="351.5123859191656" width="3.4285714285714284" height="78.48761408083442" fill="#f28e2b" />
+<text x="282.85714285714283" y="450" text-anchor="end" font-family="sans-serif" font-size="12" transform="rotate(-45, 282.85714285714283, 450)">Cpp trips=801</text>
+<rect x="293.14285714285717" y="429.41095738170105" width="3.4285714285714284" height="0.5890426182989493" fill="#e15759" />
+<rect x="296.5714285714286" y="347.0801441828361" width="3.4285714285714284" height="82.91985581716389" fill="#59a14f" />
+<rect x="300.0" y="347.25822532402793" width="3.4285714285714284" height="82.74177467597208" fill="#4e79a7" />
+<rect x="303.42857142857144" y="346.00506173786334" width="3.4285714285714284" height="83.99493826213667" fill="#f28e2b" />
+<text x="300.0" y="450" text-anchor="end" font-family="sans-serif" font-size="12" transform="rotate(-45, 300.0, 450)">Haskell-Channels trips=801</text>
+<rect x="310.2857142857143" y="427.65511888181607" width="3.4285714285714284" height="2.3448811181839093" fill="#e15759" />
+<rect x="313.7142857142857" y="312.8094179001457" width="3.4285714285714284" height="117.19058209985427" fill="#59a14f" />
+<rect x="317.1428571428571" y="313.027072628269" width="3.4285714285714284" height="116.97292737173096" fill="#4e79a7" />
+<rect x="320.57142857142856" y="309.30055985888487" width="3.4285714285714284" height="120.69944014111512" fill="#f28e2b" />
+<text x="317.1428571428571" y="450" text-anchor="end" font-family="sans-serif" font-size="12" transform="rotate(-45, 317.1428571428571, 450)">Go trips=801</text>
+<rect x="327.42857142857144" y="381.0109096096326" width="3.4285714285714284" height="48.98909039036736" fill="#e15759" />
+<rect x="330.8571428571429" y="274.8979216197561" width="3.4285714285714284" height="155.10207838024388" fill="#59a14f" />
+<rect x="334.2857142857143" y="293.43814709717003" width="3.4285714285714284" height="136.56185290282997" fill="#4e79a7" />
+<rect x="337.7142857142857" y="199.4838561239359" width="3.4285714285714284" height="230.5161438760641" fill="#f28e2b" />
+<text x="334.2857142857143" y="450" text-anchor="end" font-family="sans-serif" font-size="12" transform="rotate(-45, 334.2857142857143, 450)">Erlang trips=801</text>
+<rect x="344.57142857142856" y="422.1193893734182" width="3.4285714285714284" height="7.880610626581793" fill="#e15759" />
+<rect x="348.0" y="288.4057059590459" width="3.4285714285714284" height="141.59429404095405" fill="#59a14f" />
+<rect x="351.4285714285714" y="291.09670987038885" width="3.4285714285714284" height="138.90329012961118" fill="#4e79a7" />
+<rect x="354.85714285714283" y="277.08106449881126" width="3.4285714285714284" height="152.91893550118874" fill="#f28e2b" />
+<text x="351.4285714285714" y="450" text-anchor="end" font-family="sans-serif" font-size="12" transform="rotate(-45, 351.4285714285714, 450)">Elixir trips=801</text>
+<rect x="361.7142857142857" y="429.45129539842014" width="3.4285714285714284" height="0.5487046015798758" fill="#e15759" />
+<rect x="365.14285714285717" y="373.78571976378555" width="3.4285714285714284" height="56.21428023621443" fill="#59a14f" />
+<rect x="368.57142857142856" y="373.70657258992253" width="3.4285714285714284" height="56.293427410077456" fill="#4e79a7" />
+<rect x="372.0" y="373.1129687859499" width="3.4285714285714284" height="56.887031214050154" fill="#f28e2b" />
+<text x="368.57142857142856" y="450" text-anchor="end" font-family="sans-serif" font-size="12" transform="rotate(-45, 368.57142857142856, 450)">Haskell-Mvars trips=1201</text>
+<rect x="378.85714285714283" y="429.8139152987192" width="3.4285714285714284" height="0.18608470128077306" fill="#e15759" />
+<rect x="382.2857142857143" y="362.9755349336606" width="3.4285714285714284" height="67.02446506633945" fill="#59a14f" />
+<rect x="385.71428571428567" y="363.0546821075236" width="3.4285714285714284" height="66.94531789247641" fill="#4e79a7" />
+<rect x="389.1428571428571" y="362.62596824909883" width="3.4285714285714284" height="67.37403175090114" fill="#f28e2b" />
+<text x="385.71428571428567" y="450" text-anchor="end" font-family="sans-serif" font-size="12" transform="rotate(-45, 385.71428571428567, 450)">Rust trips=1201</text>
+<rect x="396.0" y="429.4769478548968" width="3.4285714285714284" height="0.523052145103152" fill="#e15759" />
+<rect x="399.42857142857144" y="319.2005521895851" width="3.4285714285714284" height="110.7994478104149" fill="#59a14f" />
+<rect x="402.85714285714283" y="319.128000613544" width="3.4285714285714284" height="110.87199938645601" fill="#4e79a7" />
+<rect x="406.2857142857143" y="318.5673747986809" width="3.4285714285714284" height="111.43262520131913" fill="#f28e2b" />
+<text x="402.85714285714283" y="450" text-anchor="end" font-family="sans-serif" font-size="12" transform="rotate(-45, 402.85714285714283, 450)">Cpp trips=1201</text>
+<rect x="413.14285714285717" y="429.65443849221566" width="3.4285714285714284" height="0.3455615077843393" fill="#e15759" />
+<rect x="416.5714285714286" y="307.48677045785723" width="3.4285714285714284" height="122.5132295421428" fill="#59a14f" />
+<rect x="420.0" y="307.420814479638" width="3.4285714285714284" height="122.57918552036199" fill="#4e79a7" />
+<rect x="423.42857142857144" y="307.05805659943246" width="3.4285714285714284" height="122.94194340056752" fill="#f28e2b" />
+<text x="420.0" y="450" text-anchor="end" font-family="sans-serif" font-size="12" transform="rotate(-45, 420.0, 450)">Haskell-Channels trips=1201</text>
+<rect x="430.2857142857143" y="426.83534305851674" width="3.4285714285714284" height="3.1646569414832424" fill="#e15759" />
+<rect x="433.7142857142857" y="253.71945701357467" width="3.4285714285714284" height="176.28054298642533" fill="#59a14f" />
+<rect x="437.1428571428571" y="253.93051614387605" width="3.4285714285714284" height="176.06948385612395" fill="#4e79a7" />
+<rect x="440.57142857142856" y="248.5551039190122" width="3.4285714285714284" height="181.4448960809878" fill="#f28e2b" />
+<text x="437.1428571428571" y="450" text-anchor="end" font-family="sans-serif" font-size="12" transform="rotate(-45, 437.1428571428571, 450)">Go trips=1201</text>
+<rect x="447.42857142857144" y="427.2267962082982" width="3.4285714285714284" height="2.7732037917018175" fill="#e15759" />
+<rect x="450.8571428571429" y="223.94692844543295" width="3.4285714285714284" height="206.05307155456705" fill="#59a14f" />
+<rect x="454.2857142857143" y="225.33859958585782" width="3.4285714285714284" height="204.66140041414218" fill="#4e79a7" />
+<rect x="457.7142857142857" y="219.33660556791165" width="3.4285714285714284" height="210.66339443208835" fill="#f28e2b" />
+<text x="454.2857142857143" y="450" text-anchor="end" font-family="sans-serif" font-size="12" transform="rotate(-45, 454.2857142857143, 450)">Erlang trips=1201</text>
+<rect x="464.57142857142856" y="378.39411725439066" width="3.4285714285714284" height="51.60588274560932" fill="#e15759" />
+<rect x="468.0" y="201.35700590536084" width="3.4285714285714284" height="228.64299409463916" fill="#59a14f" />
+<rect x="471.4285714285714" y="223.129074315515" width="3.4285714285714284" height="206.870925684485" fill="#4e79a7" />
+<rect x="474.85714285714283" y="114.96127003604568" width="3.4285714285714284" height="315.0387299639543" fill="#f28e2b" />
+<text x="471.4285714285714" y="450" text-anchor="end" font-family="sans-serif" font-size="12" transform="rotate(-45, 471.4285714285714, 450)">Elixir trips=1201</text>
+<rect x="481.7142857142857" y="428.80546824449726" width="3.4285714285714284" height="1.1945317555027228" fill="#e15759" />
+<rect x="485.14285714285717" y="347.8386379323568" width="3.4285714285714284" height="82.16136206764322" fill="#59a14f" />
+<rect x="488.57142857142856" y="348.11565304087736" width="3.4285714285714284" height="81.88434695912262" fill="#4e79a7" />
+<rect x="492.0" y="346.2359076616305" width="3.4285714285714284" height="83.76409233836951" fill="#f28e2b" />
+<text x="488.57142857142856" y="450" text-anchor="end" font-family="sans-serif" font-size="12" transform="rotate(-45, 488.57142857142856, 450)">Haskell-Mvars trips=1601</text>
+<rect x="498.85714285714283" y="429.8336653547051" width="3.4285714285714284" height="0.1663346452948846" fill="#e15759" />
+<rect x="502.2857142857143" y="340.7087966868625" width="3.4285714285714284" height="89.2912033131375" fill="#59a14f" />
+<rect x="505.71428571428567" y="340.66262750210905" width="3.4285714285714284" height="89.33737249789094" fill="#4e79a7" />
+<rect x="509.1428571428571" y="340.53071554567066" width="3.4285714285714284" height="89.46928445432931" fill="#f28e2b" />
+<text x="505.71428571428567" y="450" text-anchor="end" font-family="sans-serif" font-size="12" transform="rotate(-45, 505.71428571428567, 450)">Rust trips=1601</text>
+<rect x="515.9999999999999" y="429.5953505100084" width="3.4285714285714284" height="0.40464948999156375" fill="#e15759" />
+<rect x="519.4285714285713" y="282.4828591149628" width="3.4285714285714284" height="147.5171408850372" fill="#59a14f" />
+<rect x="522.8571428571428" y="282.5554106910039" width="3.4285714285714284" height="147.4445893089961" fill="#4e79a7" />
+<rect x="526.2857142857142" y="281.82989493059284" width="3.4285714285714284" height="148.17010506940716" fill="#f28e2b" />
+<text x="522.8571428571428" y="450" text-anchor="end" font-family="sans-serif" font-size="12" transform="rotate(-45, 522.8571428571428, 450)">Cpp trips=1601</text>
+<rect x="533.1428571428571" y="429.57311655188283" width="3.4285714285714284" height="0.42688344811718687" fill="#e15759" />
+<rect x="536.5714285714286" y="266.620446353248" width="3.4285714285714284" height="163.37955364675204" fill="#59a14f" />
+<rect x="540.0" y="266.82490988572744" width="3.4285714285714284" height="163.17509011427256" fill="#4e79a7" />
+<rect x="543.4285714285714" y="265.9345041797684" width="3.4285714285714284" height="164.0654958202316" fill="#f28e2b" />
+<text x="540.0" y="450" text-anchor="end" font-family="sans-serif" font-size="12" transform="rotate(-45, 540.0, 450)">Haskell-Channels trips=1601</text>
+<rect x="550.2857142857142" y="427.57248844083136" width="3.4285714285714284" height="2.4275115591686482" fill="#e15759" />
+<rect x="553.7142857142857" y="198.1845233530179" width="3.4285714285714284" height="231.8154766469821" fill="#59a14f" />
+<rect x="557.1428571428571" y="198.75834036352484" width="3.4285714285714284" height="231.24165963647516" fill="#4e79a7" />
+<rect x="560.5714285714286" y="194.07546590996242" width="3.4285714285714284" height="235.92453409003758" fill="#f28e2b" />
+<text x="557.1428571428571" y="450" text-anchor="end" font-family="sans-serif" font-size="12" transform="rotate(-45, 557.1428571428571, 450)">Go trips=1601</text>
+<rect x="567.4285714285713" y="336.8672290559092" width="3.4285714285714284" height="93.13277094409081" fill="#e15759" />
+<rect x="570.8571428571428" y="125.7714548661707" width="3.4285714285714284" height="304.2285451338293" fill="#59a14f" />
+<rect x="574.2857142857142" y="156.67842625968245" width="3.4285714285714284" height="273.32157374031755" fill="#4e79a7" />
+<rect x="577.7142857142857" y="0.0" width="3.4285714285714284" height="430.0" fill="#f28e2b" />
+<text x="574.2857142857142" y="450" text-anchor="end" font-family="sans-serif" font-size="12" transform="rotate(-45, 574.2857142857142, 450)">Erlang trips=1601</text>
+<rect x="584.5714285714286" y="416.0664362497124" width="3.4285714285714284" height="13.933563750287599" fill="#e15759" />
+<rect x="588.0" y="148.49328936268114" width="3.4285714285714284" height="281.50671063731886" fill="#59a14f" />
+<rect x="591.4285714285714" y="154.4029450111205" width="3.4285714285714284" height="275.5970549888795" fill="#4e79a7" />
+<rect x="594.8571428571429" y="124.32701894317051" width="3.4285714285714284" height="305.6729810568295" fill="#f28e2b" />
+<text x="591.4285714285714" y="450" text-anchor="end" font-family="sans-serif" font-size="12" transform="rotate(-45, 591.4285714285714, 450)">Elixir trips=1601</text>
+<rect x="601.7142857142857" y="429.07671055602424" width="3.4285714285714284" height="0.923289443975765" fill="#e15759" />
+<rect x="605.1428571428571" y="320.9615768080374" width="3.4285714285714284" height="109.0384231919626" fill="#59a14f" />
+<rect x="608.5714285714286" y="320.94179001457167" width="3.4285714285714284" height="109.05820998542832" fill="#4e79a7" />
+<rect x="612.0" y="319.82053838484546" width="3.4285714285714284" height="110.17946161515455" fill="#f28e2b" />
+<text x="608.5714285714286" y="450" text-anchor="end" font-family="sans-serif" font-size="12" transform="rotate(-45, 608.5714285714286, 450)">Haskell-Mvars trips=2001</text>
+<rect x="618.8571428571428" y="429.67897662244036" width="3.4285714285714284" height="0.32102337755962884" fill="#e15759" />
+<rect x="622.2857142857142" y="318.3299332770918" width="3.4285714285714284" height="111.67006672290819" fill="#59a14f" />
+<rect x="625.7142857142857" y="318.4354628422425" width="3.4285714285714284" height="111.56453715775748" fill="#4e79a7" />
+<rect x="629.1428571428571" y="317.7759030600506" width="3.4285714285714284" height="112.22409693994938" fill="#f28e2b" />
+<text x="625.7142857142857" y="450" text-anchor="end" font-family="sans-serif" font-size="12" transform="rotate(-45, 625.7142857142857, 450)">Rust trips=2001</text>
+<rect x="635.9999999999999" y="427.80411158984583" width="3.4285714285714284" height="2.1958884101541525" fill="#e15759" />
+<rect x="639.4285714285713" y="244.49221566071017" width="3.4285714285714284" height="185.50778433928983" fill="#59a14f" />
+<rect x="642.8571428571428" y="244.96050310606643" width="3.4285714285714284" height="185.03949689393357" fill="#4e79a7" />
+<rect x="646.2857142857142" y="241.23399033668227" width="3.4285714285714284" height="188.76600966331773" fill="#f28e2b" />
+<text x="642.8571428571428" y="450" text-anchor="end" font-family="sans-serif" font-size="12" transform="rotate(-45, 642.8571428571428, 450)">Cpp trips=2001</text>
+<rect x="653.1428571428571" y="428.5743740624281" width="3.4285714285714284" height="1.4256259375718996" fill="#e15759" />
+<rect x="656.5714285714286" y="220.7216811105146" width="3.4285714285714284" height="209.2783188894854" fill="#59a14f" />
+<rect x="660.0" y="220.688703121405" width="3.4285714285714284" height="209.311296878595" fill="#4e79a7" />
+<rect x="663.4285714285714" y="218.80895774215816" width="3.4285714285714284" height="211.19104225784184" fill="#f28e2b" />
+<text x="660.0" y="450" text-anchor="end" font-family="sans-serif" font-size="12" transform="rotate(-45, 660.0, 450)">Haskell-Channels trips=2001</text>
+<rect x="670.2857142857142" y="426.185006758187" width="3.4285714285714284" height="3.8149932418130224" fill="#e15759" />
+<rect x="673.7142857142857" y="139.23966561852905" width="3.4285714285714284" height="290.76033438147095" fill="#59a14f" />
+<rect x="677.1428571428571" y="139.4309379553647" width="3.4285714285714284" height="290.5690620446353" fill="#4e79a7" />
+<rect x="680.5714285714286" y="133.5278779047473" width="3.4285714285714284" height="296.4721220952527" fill="#f28e2b" />
+<text x="677.1428571428571" y="450" text-anchor="end" font-family="sans-serif" font-size="12" transform="rotate(-45, 677.1428571428571, 450)">Go trips=2001</text>
+<rect x="687.4285714285713" y="423.60573543983435" width="3.4285714285714284" height="6.394264560165658" fill="#e15759" />
+<rect x="690.8571428571428" y="86.32318429327404" width="3.4285714285714284" height="343.67681570672596" fill="#59a14f" />
+<rect x="694.2857142857142" y="87.98527494439759" width="3.4285714285714284" height="342.0147250556024" fill="#4e79a7" />
+<rect x="697.7142857142857" y="75.94830891939569" width="3.4285714285714284" height="354.0516910806043" fill="#f28e2b" />
+<text x="694.2857142857142" y="450" text-anchor="end" font-family="sans-serif" font-size="12" transform="rotate(-45, 694.2857142857142, 450)">Erlang trips=2001</text>
+<rect x="704.5714285714286" y="399.23005802132064" width="3.4285714285714284" height="30.76994197867935" fill="#e15759" />
+<rect x="708.0" y="63.957512079147136" width="3.4285714285714284" height="366.04248792085286" fill="#59a14f" />
+<rect x="711.4285714285714" y="82.28008282843774" width="3.4285714285714284" height="347.71991717156226" fill="#4e79a7" />
+<rect x="714.8571428571429" y="11.83909809034435" width="3.4285714285714284" height="418.16090190965565" fill="#f28e2b" />
+<text x="711.4285714285714" y="450" text-anchor="end" font-family="sans-serif" font-size="12" transform="rotate(-45, 711.4285714285714, 450)">Elixir trips=2001</text>
+<rect x="170" y="510" width="15" height="15" fill="#e15759" />
+<text x="190" y="522" font-family="sans-serif" font-size="12">Time to Finish RMS</text>
+<rect x="370" y="510" width="15" height="15" fill="#59a14f" />
+<text x="390" y="522" font-family="sans-serif" font-size="12">Time to Finish Mean</text>
+<rect x="170" y="530" width="15" height="15" fill="#4e79a7" />
+<text x="190" y="542" font-family="sans-serif" font-size="12">Time to Finish Median</text>
+<rect x="370" y="530" width="15" height="15" fill="#f28e2b" />
+<text x="390" y="542" font-family="sans-serif" font-size="12">Time to Finish 98th Percentile</text>
+</g>
+</svg>
+
+</body>
+</html>
