@@ -67,32 +67,53 @@ updatemenus1 = [
     },
 ]
 
+N_langs1 = len(unique_langs)
+N_trips1 = len(unique_trips)
+
 for i, metric in enumerate(metrics):
-    visibility = [False] * len(fig1.data)
-    for j in range(len(unique_trips) * len(unique_langs)):
-        visibility[i * len(unique_trips) * len(unique_langs) + j] = True
+    buttons = []
+    for j, trip_val in enumerate(unique_trips):
+        visibility = [False] * len(fig1.data)
+        start_idx = i * N_trips1 * N_langs1 + j * N_langs1
+        for k in range(N_langs1):
+            visibility[start_idx + k] = True
+        buttons.append(
+            {
+                "label": f"trips={trip_val}",
+                "method": "update",
+                "args": [{"visible": visibility}],
+            }
+        )
+
     updatemenus1[0]["buttons"].append(
         {
             "label": f"{metric} (ms)",
             "method": "update",
-            "args": [{"visible": visibility}, {"yaxis.title": f"{metric} (ms)"}],
+            "args": [
+                {"visible": [False] * len(fig1.data)},
+                {"updatemenus[1].buttons": buttons},
+            ],
         }
     )
+    if i == 0:
+        updatemenus1[0]["buttons"][0]["args"][0]["visible"] = [
+            True if l < N_langs1 else False for l in range(len(fig1.data))
+        ]
 
+# Initial buttons for the second dropdown
+initial_buttons1 = []
 for i, trip_val in enumerate(unique_trips):
     visibility = [False] * len(fig1.data)
-    for j in range(len(metrics)):
-        for k in range(len(unique_langs)):
-            visibility[
-                j * len(unique_trips) * len(unique_langs) + i * len(unique_langs) + k
-            ] = True
-    updatemenus1[1]["buttons"].append(
+    for k in range(N_langs1):
+        visibility[i * N_langs1 + k] = True
+    initial_buttons1.append(
         {
             "label": f"trips={trip_val}",
             "method": "update",
             "args": [{"visible": visibility}],
         }
     )
+updatemenus1[1]["buttons"] = initial_buttons1
 
 fig1.update_layout(
     updatemenus=updatemenus1,
@@ -146,32 +167,53 @@ updatemenus2 = [
     },
 ]
 
+N_langs2 = len(unique_langs)
+N_nodes2 = len(unique_nodes)
+
 for i, metric in enumerate(metrics):
-    visibility = [False] * len(fig2.data)
-    for j in range(len(unique_nodes) * len(unique_langs)):
-        visibility[i * len(unique_nodes) * len(unique_langs) + j] = True
+    buttons = []
+    for j, node_val in enumerate(unique_nodes):
+        visibility = [False] * len(fig2.data)
+        start_idx = i * N_nodes2 * N_langs2 + j * N_langs2
+        for k in range(N_langs2):
+            visibility[start_idx + k] = True
+        buttons.append(
+            {
+                "label": f"nodes={node_val}",
+                "method": "update",
+                "args": [{"visible": visibility}],
+            }
+        )
+
     updatemenus2[0]["buttons"].append(
         {
             "label": f"{metric} (ms)",
             "method": "update",
-            "args": [{"visible": visibility}, {"yaxis.title": f"{metric} (ms)"}],
+            "args": [
+                {"visible": [False] * len(fig2.data)},
+                {"updatemenus[1].buttons": buttons},
+            ],
         }
     )
+    if i == 0:
+        updatemenus2[0]["buttons"][0]["args"][0]["visible"] = [
+            True if l < N_langs2 else False for l in range(len(fig2.data))
+        ]
 
+# Initial buttons for the second dropdown
+initial_buttons2 = []
 for i, node_val in enumerate(unique_nodes):
     visibility = [False] * len(fig2.data)
-    for j in range(len(metrics)):
-        for k in range(len(unique_langs)):
-            visibility[
-                j * len(unique_nodes) * len(unique_langs) + i * len(unique_langs) + k
-            ] = True
-    updatemenus2[1]["buttons"].append(
+    for k in range(N_langs2):
+        visibility[i * N_langs2 + k] = True
+    initial_buttons2.append(
         {
             "label": f"nodes={node_val}",
             "method": "update",
             "args": [{"visible": visibility}],
         }
     )
+updatemenus2[1]["buttons"] = initial_buttons2
 
 fig2.update_layout(
     updatemenus=updatemenus2,
