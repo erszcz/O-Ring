@@ -1,0 +1,98 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>O-Ring Benchmark Results</title>
+</head>
+<body>
+<h1>O-Ring Benchmark Results</h1>
+<svg width="800" height="600" xmlns="http://www.w3.org/2000/svg">
+<rect width="100%" height="100%" fill="white" />
+<g transform="translate(60, 50)"><text x="360.0" y="-20" text-anchor="middle" font-family="sans-serif" font-size="20">O-Ring Benchmark Setup Times</text>
+<text x="360.0" y="-2" text-anchor="middle" font-family="sans-serif" font-size="12">#nodes: 10000, iterations: 5</text>
+<line x1="0" y1="0" x2="0" y2="430" stroke="black" />
+<text x="-10" y="430.0" text-anchor="end" alignment-baseline="middle" font-family="sans-serif" font-size="10">0.0s</text>
+<line x1="0" y1="430.0" x2="720" y2="430.0" stroke="#eee" />
+<text x="-10" y="344.0" text-anchor="end" alignment-baseline="middle" font-family="sans-serif" font-size="10">0.0s</text>
+<line x1="0" y1="344.0" x2="720" y2="344.0" stroke="#eee" />
+<text x="-10" y="258.0" text-anchor="end" alignment-baseline="middle" font-family="sans-serif" font-size="10">0.0s</text>
+<line x1="0" y1="258.0" x2="720" y2="258.0" stroke="#eee" />
+<text x="-10" y="172.0" text-anchor="end" alignment-baseline="middle" font-family="sans-serif" font-size="10">0.0s</text>
+<line x1="0" y1="172.0" x2="720" y2="172.0" stroke="#eee" />
+<text x="-10" y="86.0" text-anchor="end" alignment-baseline="middle" font-family="sans-serif" font-size="10">0.0s</text>
+<line x1="0" y1="86.0" x2="720" y2="86.0" stroke="#eee" />
+<text x="-10" y="0.0" text-anchor="end" alignment-baseline="middle" font-family="sans-serif" font-size="10">0.0s</text>
+<line x1="0" y1="0.0" x2="720" y2="0.0" stroke="#eee" />
+<text x="-40" y="215.0" transform="rotate(-90, -40, 215.0)" text-anchor="middle" font-family="sans-serif" font-size="12">Setup Time</text>
+<rect x="24.0" y="359.7812866666667" width="48.0" height="70.21871333333333" fill="#e15759" />
+<rect x="72.0" y="86.00000000000006" width="48.0" height="343.99999999999994" fill="#59a14f" />
+<rect x="120.0" y="143.33333333333337" width="48.0" height="286.66666666666663" fill="#4e79a7" />
+<rect x="168.0" y="0.0" width="48.0" height="430.0" fill="#f28e2b" />
+<text x="120.0" y="450" text-anchor="end" font-family="sans-serif" font-size="12" transform="rotate(-45, 120.0, 450)">Haskell-Channels trips=2000</text>
+<rect x="264.0" y="430.0" width="48.0" height="0.0" fill="#e15759" />
+<rect x="312.0" y="143.33333333333337" width="48.0" height="286.66666666666663" fill="#59a14f" />
+<rect x="360.0" y="143.33333333333337" width="48.0" height="286.66666666666663" fill="#4e79a7" />
+<rect x="408.0" y="143.33333333333337" width="48.0" height="286.66666666666663" fill="#f28e2b" />
+<text x="360.0" y="450" text-anchor="end" font-family="sans-serif" font-size="12" transform="rotate(-45, 360.0, 450)">Haskell-Channels trips=6000</text>
+<rect x="504.0" y="315.3333333333333" width="48.0" height="114.66666666666667" fill="#e15759" />
+<rect x="552.0" y="86.00000000000006" width="48.0" height="343.99999999999994" fill="#59a14f" />
+<rect x="600.0" y="143.33333333333337" width="48.0" height="286.66666666666663" fill="#4e79a7" />
+<rect x="648.0" y="0.0" width="48.0" height="430.0" fill="#f28e2b" />
+<text x="600.0" y="450" text-anchor="end" font-family="sans-serif" font-size="12" transform="rotate(-45, 600.0, 450)">Haskell-Channels trips=10000</text>
+<rect x="170" y="510" width="15" height="15" fill="#e15759" />
+<text x="190" y="522" font-family="sans-serif" font-size="12">Setup Time RMS</text>
+<rect x="370" y="510" width="15" height="15" fill="#59a14f" />
+<text x="390" y="522" font-family="sans-serif" font-size="12">Setup Time Mean</text>
+<rect x="170" y="530" width="15" height="15" fill="#4e79a7" />
+<text x="190" y="542" font-family="sans-serif" font-size="12">Setup Time Median</text>
+<rect x="370" y="530" width="15" height="15" fill="#f28e2b" />
+<text x="390" y="542" font-family="sans-serif" font-size="12">Setup Time 98th Percentile</text>
+</g>
+</svg>
+
+<svg width="800" height="600" xmlns="http://www.w3.org/2000/svg">
+<rect width="100%" height="100%" fill="white" />
+<g transform="translate(60, 50)"><text x="360.0" y="-20" text-anchor="middle" font-family="sans-serif" font-size="20">O-Ring Benchmark Runtime Results</text>
+<text x="360.0" y="-2" text-anchor="middle" font-family="sans-serif" font-size="12">#nodes: 10000, iterations: 5</text>
+<line x1="0" y1="0" x2="0" y2="430" stroke="black" />
+<text x="-10" y="430.0" text-anchor="end" alignment-baseline="middle" font-family="sans-serif" font-size="10">0.0s</text>
+<line x1="0" y1="430.0" x2="720" y2="430.0" stroke="#eee" />
+<text x="-10" y="344.0" text-anchor="end" alignment-baseline="middle" font-family="sans-serif" font-size="10">3.2s</text>
+<line x1="0" y1="344.0" x2="720" y2="344.0" stroke="#eee" />
+<text x="-10" y="258.0" text-anchor="end" alignment-baseline="middle" font-family="sans-serif" font-size="10">6.5s</text>
+<line x1="0" y1="258.0" x2="720" y2="258.0" stroke="#eee" />
+<text x="-10" y="172.0" text-anchor="end" alignment-baseline="middle" font-family="sans-serif" font-size="10">9.7s</text>
+<line x1="0" y1="172.0" x2="720" y2="172.0" stroke="#eee" />
+<text x="-10" y="86.0" text-anchor="end" alignment-baseline="middle" font-family="sans-serif" font-size="10">13.0s</text>
+<line x1="0" y1="86.0" x2="720" y2="86.0" stroke="#eee" />
+<text x="-10" y="0.0" text-anchor="end" alignment-baseline="middle" font-family="sans-serif" font-size="10">16.2s</text>
+<line x1="0" y1="0.0" x2="720" y2="0.0" stroke="#eee" />
+<text x="-40" y="215.0" transform="rotate(-90, -40, 215.0)" text-anchor="middle" font-family="sans-serif" font-size="12">Time to Finish</text>
+<rect x="24.0" y="428.94114551274157" width="48.0" height="1.0588544872584023" fill="#e15759" />
+<rect x="72.0" y="346.016865690016" width="48.0" height="83.983134309984" fill="#59a14f" />
+<rect x="120.0" y="346.3874184414625" width="48.0" height="83.61258155853749" fill="#4e79a7" />
+<rect x="168.0" y="345.1169518650745" width="48.0" height="84.88304813492552" fill="#f28e2b" />
+<text x="120.0" y="450" text-anchor="end" font-family="sans-serif" font-size="12" transform="rotate(-45, 120.0, 450)">Haskell-Channels trips=2000</text>
+<rect x="264.0" y="429.09125492367355" width="48.0" height="0.9087450763264805" fill="#e15759" />
+<rect x="312.0" y="177.41536378185398" width="48.0" height="252.58463621814602" fill="#59a14f" />
+<rect x="360.0" y="177.627108211252" width="48.0" height="252.372891788748" fill="#4e79a7" />
+<rect x="408.0" y="176.3831096885387" width="48.0" height="253.6168903114613" fill="#f28e2b" />
+<text x="360.0" y="450" text-anchor="end" font-family="sans-serif" font-size="12" transform="rotate(-45, 360.0, 450)">Haskell-Channels trips=6000</text>
+<rect x="504.0" y="428.3314962187615" width="48.0" height="1.6685037812384587" fill="#e15759" />
+<rect x="552.0" y="1.969223193401433" width="48.0" height="428.03077680659857" fill="#59a14f" />
+<rect x="600.0" y="2.6997414748245774" width="48.0" height="427.3002585251754" fill="#4e79a7" />
+<rect x="648.0" y="0.0" width="48.0" height="430.0" fill="#f28e2b" />
+<text x="600.0" y="450" text-anchor="end" font-family="sans-serif" font-size="12" transform="rotate(-45, 600.0, 450)">Haskell-Channels trips=10000</text>
+<rect x="170" y="510" width="15" height="15" fill="#e15759" />
+<text x="190" y="522" font-family="sans-serif" font-size="12">Time to Finish RMS</text>
+<rect x="370" y="510" width="15" height="15" fill="#59a14f" />
+<text x="390" y="522" font-family="sans-serif" font-size="12">Time to Finish Mean</text>
+<rect x="170" y="530" width="15" height="15" fill="#4e79a7" />
+<text x="190" y="542" font-family="sans-serif" font-size="12">Time to Finish Median</text>
+<rect x="370" y="530" width="15" height="15" fill="#f28e2b" />
+<text x="390" y="542" font-family="sans-serif" font-size="12">Time to Finish 98th Percentile</text>
+</g>
+</svg>
+
+</body>
+</html>

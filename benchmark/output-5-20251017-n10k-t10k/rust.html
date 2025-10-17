@@ -1,0 +1,98 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>O-Ring Benchmark Results</title>
+</head>
+<body>
+<h1>O-Ring Benchmark Results</h1>
+<svg width="800" height="600" xmlns="http://www.w3.org/2000/svg">
+<rect width="100%" height="100%" fill="white" />
+<g transform="translate(60, 50)"><text x="360.0" y="-20" text-anchor="middle" font-family="sans-serif" font-size="20">O-Ring Benchmark Setup Times</text>
+<text x="360.0" y="-2" text-anchor="middle" font-family="sans-serif" font-size="12">#nodes: 10000, iterations: 5</text>
+<line x1="0" y1="0" x2="0" y2="430" stroke="black" />
+<text x="-10" y="430.0" text-anchor="end" alignment-baseline="middle" font-family="sans-serif" font-size="10">0.0s</text>
+<line x1="0" y1="430.0" x2="720" y2="430.0" stroke="#eee" />
+<text x="-10" y="344.0" text-anchor="end" alignment-baseline="middle" font-family="sans-serif" font-size="10">0.0s</text>
+<line x1="0" y1="344.0" x2="720" y2="344.0" stroke="#eee" />
+<text x="-10" y="258.0" text-anchor="end" alignment-baseline="middle" font-family="sans-serif" font-size="10">0.0s</text>
+<line x1="0" y1="258.0" x2="720" y2="258.0" stroke="#eee" />
+<text x="-10" y="172.0" text-anchor="end" alignment-baseline="middle" font-family="sans-serif" font-size="10">0.0s</text>
+<line x1="0" y1="172.0" x2="720" y2="172.0" stroke="#eee" />
+<text x="-10" y="86.0" text-anchor="end" alignment-baseline="middle" font-family="sans-serif" font-size="10">0.0s</text>
+<line x1="0" y1="86.0" x2="720" y2="86.0" stroke="#eee" />
+<text x="-10" y="0.0" text-anchor="end" alignment-baseline="middle" font-family="sans-serif" font-size="10">0.0s</text>
+<line x1="0" y1="0.0" x2="720" y2="0.0" stroke="#eee" />
+<text x="-40" y="215.0" transform="rotate(-90, -40, 215.0)" text-anchor="middle" font-family="sans-serif" font-size="12">Setup Time</text>
+<rect x="24.0" y="359.7812866666667" width="48.0" height="70.21871333333333" fill="#e15759" />
+<rect x="72.0" y="57.333333333333314" width="48.0" height="372.6666666666667" fill="#59a14f" />
+<rect x="120.0" y="0.0" width="48.0" height="430.0" fill="#4e79a7" />
+<rect x="168.0" y="0.0" width="48.0" height="430.0" fill="#f28e2b" />
+<text x="120.0" y="450" text-anchor="end" font-family="sans-serif" font-size="12" transform="rotate(-45, 120.0, 450)">Rust trips=2000</text>
+<rect x="264.0" y="430.0" width="48.0" height="0.0" fill="#e15759" />
+<rect x="312.0" y="0.0" width="48.0" height="430.0" fill="#59a14f" />
+<rect x="360.0" y="0.0" width="48.0" height="430.0" fill="#4e79a7" />
+<rect x="408.0" y="0.0" width="48.0" height="430.0" fill="#f28e2b" />
+<text x="360.0" y="450" text-anchor="end" font-family="sans-serif" font-size="12" transform="rotate(-45, 360.0, 450)">Rust trips=6000</text>
+<rect x="504.0" y="430.0" width="48.0" height="0.0" fill="#e15759" />
+<rect x="552.0" y="0.0" width="48.0" height="430.0" fill="#59a14f" />
+<rect x="600.0" y="0.0" width="48.0" height="430.0" fill="#4e79a7" />
+<rect x="648.0" y="0.0" width="48.0" height="430.0" fill="#f28e2b" />
+<text x="600.0" y="450" text-anchor="end" font-family="sans-serif" font-size="12" transform="rotate(-45, 600.0, 450)">Rust trips=10000</text>
+<rect x="170" y="510" width="15" height="15" fill="#e15759" />
+<text x="190" y="522" font-family="sans-serif" font-size="12">Setup Time RMS</text>
+<rect x="370" y="510" width="15" height="15" fill="#59a14f" />
+<text x="390" y="522" font-family="sans-serif" font-size="12">Setup Time Mean</text>
+<rect x="170" y="530" width="15" height="15" fill="#4e79a7" />
+<text x="190" y="542" font-family="sans-serif" font-size="12">Setup Time Median</text>
+<rect x="370" y="530" width="15" height="15" fill="#f28e2b" />
+<text x="390" y="542" font-family="sans-serif" font-size="12">Setup Time 98th Percentile</text>
+</g>
+</svg>
+
+<svg width="800" height="600" xmlns="http://www.w3.org/2000/svg">
+<rect width="100%" height="100%" fill="white" />
+<g transform="translate(60, 50)"><text x="360.0" y="-20" text-anchor="middle" font-family="sans-serif" font-size="20">O-Ring Benchmark Runtime Results</text>
+<text x="360.0" y="-2" text-anchor="middle" font-family="sans-serif" font-size="12">#nodes: 10000, iterations: 5</text>
+<line x1="0" y1="0" x2="0" y2="430" stroke="black" />
+<text x="-10" y="430.0" text-anchor="end" alignment-baseline="middle" font-family="sans-serif" font-size="10">0.0s</text>
+<line x1="0" y1="430.0" x2="720" y2="430.0" stroke="#eee" />
+<text x="-10" y="344.0" text-anchor="end" alignment-baseline="middle" font-family="sans-serif" font-size="10">1.7s</text>
+<line x1="0" y1="344.0" x2="720" y2="344.0" stroke="#eee" />
+<text x="-10" y="258.0" text-anchor="end" alignment-baseline="middle" font-family="sans-serif" font-size="10">3.4s</text>
+<line x1="0" y1="258.0" x2="720" y2="258.0" stroke="#eee" />
+<text x="-10" y="172.0" text-anchor="end" alignment-baseline="middle" font-family="sans-serif" font-size="10">5.1s</text>
+<line x1="0" y1="172.0" x2="720" y2="172.0" stroke="#eee" />
+<text x="-10" y="86.0" text-anchor="end" alignment-baseline="middle" font-family="sans-serif" font-size="10">6.8s</text>
+<line x1="0" y1="86.0" x2="720" y2="86.0" stroke="#eee" />
+<text x="-10" y="0.0" text-anchor="end" alignment-baseline="middle" font-family="sans-serif" font-size="10">8.5s</text>
+<line x1="0" y1="0.0" x2="720" y2="0.0" stroke="#eee" />
+<text x="-40" y="215.0" transform="rotate(-90, -40, 215.0)" text-anchor="middle" font-family="sans-serif" font-size="12">Time to Finish</text>
+<rect x="24.0" y="429.45824943518465" width="48.0" height="0.5417505648153601" fill="#e15759" />
+<rect x="72.0" y="343.4884268802639" width="48.0" height="86.51157311973614" fill="#59a14f" />
+<rect x="120.0" y="343.7416808999352" width="48.0" height="86.25831910006478" fill="#4e79a7" />
+<rect x="168.0" y="342.90594263501976" width="48.0" height="87.09405736498026" fill="#f28e2b" />
+<text x="120.0" y="450" text-anchor="end" font-family="sans-serif" font-size="12" transform="rotate(-45, 120.0, 450)">Rust trips=2000</text>
+<rect x="264.0" y="428.9217206136993" width="48.0" height="1.0782793863007245" fill="#e15759" />
+<rect x="312.0" y="170.7691854643972" width="48.0" height="259.2308145356028" fill="#59a14f" />
+<rect x="360.0" y="170.66788385652865" width="48.0" height="259.33211614347135" fill="#4e79a7" />
+<rect x="408.0" y="169.68019317981037" width="48.0" height="260.3198068201896" fill="#f28e2b" />
+<text x="360.0" y="450" text-anchor="end" font-family="sans-serif" font-size="12" transform="rotate(-45, 360.0, 450)">Rust trips=6000</text>
+<rect x="504.0" y="429.40706097296663" width="48.0" height="0.5929390270333943" fill="#e15759" />
+<rect x="552.0" y="0.5520937628835441" width="48.0" height="429.44790623711646" fill="#59a14f" />
+<rect x="600.0" y="0.5824842452441317" width="48.0" height="429.41751575475587" fill="#4e79a7" />
+<rect x="648.0" y="0.0" width="48.0" height="430.0" fill="#f28e2b" />
+<text x="600.0" y="450" text-anchor="end" font-family="sans-serif" font-size="12" transform="rotate(-45, 600.0, 450)">Rust trips=10000</text>
+<rect x="170" y="510" width="15" height="15" fill="#e15759" />
+<text x="190" y="522" font-family="sans-serif" font-size="12">Time to Finish RMS</text>
+<rect x="370" y="510" width="15" height="15" fill="#59a14f" />
+<text x="390" y="522" font-family="sans-serif" font-size="12">Time to Finish Mean</text>
+<rect x="170" y="530" width="15" height="15" fill="#4e79a7" />
+<text x="190" y="542" font-family="sans-serif" font-size="12">Time to Finish Median</text>
+<rect x="370" y="530" width="15" height="15" fill="#f28e2b" />
+<text x="390" y="542" font-family="sans-serif" font-size="12">Time to Finish 98th Percentile</text>
+</g>
+</svg>
+
+</body>
+</html>
