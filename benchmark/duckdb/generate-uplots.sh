@@ -1,38 +1,40 @@
-#!/bin/sh
+#!/usr/bin/env bash
 
 TMPFILE=tmpfile
 
-for nodes in `seq 10000 20000 90000`; do
+for NODES in `seq 10000 20000 90000`; do
+  OUTPUT_CSV="uplot.x-trips.nodes$(printf %06d ${NODES}).csv"
   cat <<EOF > $TMPFILE
 COPY (
   FROM "all-results"
-  SELECT concat(trips, '-', "#nodes") AS "x=trips nodes=${nodes}",
+  SELECT concat(trips, '-', "#nodes") AS "x=trips nodes=${NODES}",
   "cpp-runtime-median",
   "erlang-runtime-median",
   "go-runtime-median",
   "haskell-mvars-runtime-median",
   "rust-runtime-median"
-  WHERE "#nodes"=${nodes}
+  WHERE "#nodes"=${NODES}
   ORDER BY "trips"
-) TO 'uplot.x-trips.nodes${nodes}.csv' (HEADER, DELIMITER ',');
+) TO '${OUTPUT_CSV}' (HEADER, DELIMITER ',');
 EOF
 
   duckdb results.duckdb < tmpfile
 done
 
-for trips in `seq 500 1000 4500`; do
+for TRIPS in `seq 500 1000 4500`; do
+  OUTPUT_CSV="uplot.x-nodes.trips$(printf %06d ${TRIPS}).csv"
   cat <<EOF > $TMPFILE
 COPY (
   FROM "all-results"
-  SELECT concat("#nodes", '-', trips) AS "x=nodes trips=${trips}",
+  SELECT concat("#nodes", '-', trips) AS "x=nodes trips=${TRIPS}",
   "cpp-runtime-median",
   "erlang-runtime-median",
   "go-runtime-median",
   "haskell-mvars-runtime-median",
   "rust-runtime-median"
-  WHERE "trips"=${trips}
+  WHERE "trips"=${TRIPS}
   ORDER BY "#nodes"
-) TO 'uplot.x-nodes.trips${trips}.csv' (HEADER, DELIMITER ',');
+) TO '${OUTPUT_CSV}' (HEADER, DELIMITER ',');
 EOF
 
   duckdb results.duckdb < tmpfile
