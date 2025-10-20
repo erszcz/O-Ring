@@ -1,10 +1,1 @@
 CREATE TABLE "{lang}" AS FROM '../output/{lang}.csv';
-ALTER TABLE "{lang}" RENAME "setup RMS"                          TO "{lang}-setup-rms";
-ALTER TABLE "{lang}" RENAME "setup mean[ms]"                     TO "{lang}-setup-mean[ms]";
-ALTER TABLE "{lang}" RENAME "setup median[ms]"                   TO "{lang}-setup-median[ms]";
-ALTER TABLE "{lang}" RENAME "setup 98th percentile[ms]"          TO "{lang}-setup-98p[ms]";
-ALTER TABLE "{lang}" RENAME "time to finish RMS"                 TO "{lang}-runtime-rms";
-ALTER TABLE "{lang}" RENAME "time to finish mean[ms]"            TO "{lang}-runtime-mean[ms]";
-ALTER TABLE "{lang}" RENAME "time to finish median[ms]"          TO "{lang}-runtime-median[ms]";
-ALTER TABLE "{lang}" RENAME "time to finish 98th percentile[ms]" TO "{lang}-runtime-98p[ms]";
-

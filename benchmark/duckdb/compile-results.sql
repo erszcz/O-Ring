@@ -1,70 +1,84 @@
 CREATE TABLE "cpp" AS FROM '../output/cpp.csv';
-ALTER TABLE "cpp" RENAME "setup RMS"                          TO "cpp-setup-rms";
-ALTER TABLE "cpp" RENAME "setup mean[ms]"                     TO "cpp-setup-mean[ms]";
-ALTER TABLE "cpp" RENAME "setup median[ms]"                   TO "cpp-setup-median[ms]";
-ALTER TABLE "cpp" RENAME "setup 98th percentile[ms]"          TO "cpp-setup-98p[ms]";
-ALTER TABLE "cpp" RENAME "time to finish RMS"                 TO "cpp-runtime-rms";
-ALTER TABLE "cpp" RENAME "time to finish mean[ms]"            TO "cpp-runtime-mean[ms]";
-ALTER TABLE "cpp" RENAME "time to finish median[ms]"          TO "cpp-runtime-median[ms]";
-ALTER TABLE "cpp" RENAME "time to finish 98th percentile[ms]" TO "cpp-runtime-98p[ms]";
-
 CREATE TABLE "elixir" AS FROM '../output/elixir.csv';
-ALTER TABLE "elixir" RENAME "setup RMS"                          TO "elixir-setup-rms";
-ALTER TABLE "elixir" RENAME "setup mean[ms]"                     TO "elixir-setup-mean[ms]";
-ALTER TABLE "elixir" RENAME "setup median[ms]"                   TO "elixir-setup-median[ms]";
-ALTER TABLE "elixir" RENAME "setup 98th percentile[ms]"          TO "elixir-setup-98p[ms]";
-ALTER TABLE "elixir" RENAME "time to finish RMS"                 TO "elixir-runtime-rms";
-ALTER TABLE "elixir" RENAME "time to finish mean[ms]"            TO "elixir-runtime-mean[ms]";
-ALTER TABLE "elixir" RENAME "time to finish median[ms]"          TO "elixir-runtime-median[ms]";
-ALTER TABLE "elixir" RENAME "time to finish 98th percentile[ms]" TO "elixir-runtime-98p[ms]";
-
 CREATE TABLE "erlang" AS FROM '../output/erlang.csv';
-ALTER TABLE "erlang" RENAME "setup RMS"                          TO "erlang-setup-rms";
-ALTER TABLE "erlang" RENAME "setup mean[ms]"                     TO "erlang-setup-mean[ms]";
-ALTER TABLE "erlang" RENAME "setup median[ms]"                   TO "erlang-setup-median[ms]";
-ALTER TABLE "erlang" RENAME "setup 98th percentile[ms]"          TO "erlang-setup-98p[ms]";
-ALTER TABLE "erlang" RENAME "time to finish RMS"                 TO "erlang-runtime-rms";
-ALTER TABLE "erlang" RENAME "time to finish mean[ms]"            TO "erlang-runtime-mean[ms]";
-ALTER TABLE "erlang" RENAME "time to finish median[ms]"          TO "erlang-runtime-median[ms]";
-ALTER TABLE "erlang" RENAME "time to finish 98th percentile[ms]" TO "erlang-runtime-98p[ms]";
-
 CREATE TABLE "go" AS FROM '../output/go.csv';
-ALTER TABLE "go" RENAME "setup RMS"                          TO "go-setup-rms";
-ALTER TABLE "go" RENAME "setup mean[ms]"                     TO "go-setup-mean[ms]";
-ALTER TABLE "go" RENAME "setup median[ms]"                   TO "go-setup-median[ms]";
-ALTER TABLE "go" RENAME "setup 98th percentile[ms]"          TO "go-setup-98p[ms]";
-ALTER TABLE "go" RENAME "time to finish RMS"                 TO "go-runtime-rms";
-ALTER TABLE "go" RENAME "time to finish mean[ms]"            TO "go-runtime-mean[ms]";
-ALTER TABLE "go" RENAME "time to finish median[ms]"          TO "go-runtime-median[ms]";
-ALTER TABLE "go" RENAME "time to finish 98th percentile[ms]" TO "go-runtime-98p[ms]";
-
 CREATE TABLE "haskell-channels" AS FROM '../output/haskell-channels.csv';
-ALTER TABLE "haskell-channels" RENAME "setup RMS"                          TO "haskell-channels-setup-rms";
-ALTER TABLE "haskell-channels" RENAME "setup mean[ms]"                     TO "haskell-channels-setup-mean[ms]";
-ALTER TABLE "haskell-channels" RENAME "setup median[ms]"                   TO "haskell-channels-setup-median[ms]";
-ALTER TABLE "haskell-channels" RENAME "setup 98th percentile[ms]"          TO "haskell-channels-setup-98p[ms]";
-ALTER TABLE "haskell-channels" RENAME "time to finish RMS"                 TO "haskell-channels-runtime-rms";
-ALTER TABLE "haskell-channels" RENAME "time to finish mean[ms]"            TO "haskell-channels-runtime-mean[ms]";
-ALTER TABLE "haskell-channels" RENAME "time to finish median[ms]"          TO "haskell-channels-runtime-median[ms]";
-ALTER TABLE "haskell-channels" RENAME "time to finish 98th percentile[ms]" TO "haskell-channels-runtime-98p[ms]";
-
 CREATE TABLE "haskell-mvars" AS FROM '../output/haskell-mvars.csv';
-ALTER TABLE "haskell-mvars" RENAME "setup RMS"                          TO "haskell-mvars-setup-rms";
-ALTER TABLE "haskell-mvars" RENAME "setup mean[ms]"                     TO "haskell-mvars-setup-mean[ms]";
-ALTER TABLE "haskell-mvars" RENAME "setup median[ms]"                   TO "haskell-mvars-setup-median[ms]";
-ALTER TABLE "haskell-mvars" RENAME "setup 98th percentile[ms]"          TO "haskell-mvars-setup-98p[ms]";
-ALTER TABLE "haskell-mvars" RENAME "time to finish RMS"                 TO "haskell-mvars-runtime-rms";
-ALTER TABLE "haskell-mvars" RENAME "time to finish mean[ms]"            TO "haskell-mvars-runtime-mean[ms]";
-ALTER TABLE "haskell-mvars" RENAME "time to finish median[ms]"          TO "haskell-mvars-runtime-median[ms]";
-ALTER TABLE "haskell-mvars" RENAME "time to finish 98th percentile[ms]" TO "haskell-mvars-runtime-98p[ms]";
-
 CREATE TABLE "rust" AS FROM '../output/rust.csv';
-ALTER TABLE "rust" RENAME "setup RMS"                          TO "rust-setup-rms";
-ALTER TABLE "rust" RENAME "setup mean[ms]"                     TO "rust-setup-mean[ms]";
-ALTER TABLE "rust" RENAME "setup median[ms]"                   TO "rust-setup-median[ms]";
-ALTER TABLE "rust" RENAME "setup 98th percentile[ms]"          TO "rust-setup-98p[ms]";
-ALTER TABLE "rust" RENAME "time to finish RMS"                 TO "rust-runtime-rms";
-ALTER TABLE "rust" RENAME "time to finish mean[ms]"            TO "rust-runtime-mean[ms]";
-ALTER TABLE "rust" RENAME "time to finish median[ms]"          TO "rust-runtime-median[ms]";
-ALTER TABLE "rust" RENAME "time to finish 98th percentile[ms]" TO "rust-runtime-98p[ms]";
 
+CREATE VIEW "all-results" AS
+FROM cpp
+JOIN elixir ON cpp."#nodes" = elixir."#nodes" AND cpp.trips = elixir.trips
+JOIN erlang ON cpp."#nodes" = erlang."#nodes" AND cpp.trips = erlang.trips
+JOIN go ON cpp."#nodes" = go."#nodes" AND cpp.trips = go.trips
+JOIN "haskell-channels" ON cpp."#nodes" = "haskell-channels"."#nodes" AND cpp.trips = "haskell-channels".trips
+JOIN "haskell-mvars" ON cpp."#nodes" = "haskell-mvars"."#nodes" AND cpp.trips = "haskell-mvars".trips
+JOIN rust ON cpp."#nodes" = rust."#nodes" AND cpp.trips = rust.trips
+SELECT
+    cpp."#nodes", cpp.trips, cpp.iterations,
+
+    cpp."setup mean[ms]" AS 'cpp-setup-mean',
+    cpp."setup RMS" AS 'cpp-setup-rms',
+    cpp."setup median[ms]" AS 'cpp-setup-median',
+    cpp."setup 98th percentile[ms]" AS 'cpp-setup-98p',
+    cpp."time to finish mean[ms]" AS 'cpp-runtime-mean',
+    cpp."time to finish RMS" AS 'cpp-runtime-rms',
+    cpp."time to finish median[ms]" AS 'cpp-runtime-median',
+    cpp."time to finish 98th percentile[ms]" AS 'cpp-runtime-98p',
+
+    elixir."setup mean[ms]" AS 'elixir-setup-mean',
+    elixir."setup RMS" AS 'elixir-setup-rms',
+    elixir."setup median[ms]" AS 'elixir-setup-median',
+    elixir."setup 98th percentile[ms]" AS 'elixir-setup-98p',
+    elixir."time to finish mean[ms]" AS 'elixir-runtime-mean',
+    elixir."time to finish RMS" AS 'elixir-runtime-rms',
+    elixir."time to finish median[ms]" AS 'elixir-runtime-median',
+    elixir."time to finish 98th percentile[ms]" AS 'elixir-runtime-98p',
+
+    erlang."setup mean[ms]" AS 'erlang-setup-mean',
+    erlang."setup RMS" AS 'erlang-setup-rms',
+    erlang."setup median[ms]" AS 'erlang-setup-median',
+    erlang."setup 98th percentile[ms]" AS 'erlang-setup-98p',
+    erlang."time to finish mean[ms]" AS 'erlang-runtime-mean',
+    erlang."time to finish RMS" AS 'erlang-runtime-rms',
+    erlang."time to finish median[ms]" AS 'erlang-runtime-median',
+    erlang."time to finish 98th percentile[ms]" AS 'erlang-runtime-98p',
+
+    go."setup mean[ms]" AS 'go-setup-mean',
+    go."setup RMS" AS 'go-setup-rms',
+    go."setup median[ms]" AS 'go-setup-median',
+    go."setup 98th percentile[ms]" AS 'go-setup-98p',
+    go."time to finish mean[ms]" AS 'go-runtime-mean',
+    go."time to finish RMS" AS 'go-runtime-rms',
+    go."time to finish median[ms]" AS 'go-runtime-median',
+    go."time to finish 98th percentile[ms]" AS 'go-runtime-98p',
+
+
+    "haskell-channels"."setup mean[ms]" AS 'haskell-channels-setup-mean',
+    "haskell-channels"."setup RMS" AS 'haskell-channels-setup-rms',
+    "haskell-channels"."setup median[ms]" AS 'haskell-channels-setup-median',
+    "haskell-channels"."setup 98th percentile[ms]" AS 'haskell-channels-setup-98p',
+    "haskell-channels"."time to finish mean[ms]" AS 'haskell-channels-runtime-mean',
+    "haskell-channels"."time to finish RMS" AS 'haskell-channels-runtime-rms',
+    "haskell-channels"."time to finish median[ms]" AS 'haskell-channels-runtime-median',
+    "haskell-channels"."time to finish 98th percentile[ms]" AS 'haskell-channels-runtime-98p',
+
+    "haskell-mvars"."setup mean[ms]" AS 'haskell-mvars-setup-mean',
+    "haskell-mvars"."setup RMS" AS 'haskell-mvars-setup-rms',
+    "haskell-mvars"."setup median[ms]" AS 'haskell-mvars-setup-median',
+    "haskell-mvars"."setup 98th percentile[ms]" AS 'haskell-mvars-setup-98p',
+    "haskell-mvars"."time to finish mean[ms]" AS 'haskell-mvars-runtime-mean',
+    "haskell-mvars"."time to finish RMS" AS 'haskell-mvars-runtime-rms',
+    "haskell-mvars"."time to finish median[ms]" AS 'haskell-mvars-runtime-median',
+    "haskell-mvars"."time to finish 98th percentile[ms]" AS 'haskell-mvars-runtime-98p',
+
+    rust."setup mean[ms]" AS 'rust-setup-mean',
+    rust."setup RMS" AS 'rust-setup-rms',
+    rust."setup median[ms]" AS 'rust-setup-median',
+    rust."setup 98th percentile[ms]" AS 'rust-setup-98p',
+    rust."time to finish mean[ms]" AS 'rust-runtime-mean',
+    rust."time to finish RMS" AS 'rust-runtime-rms',
+    rust."time to finish median[ms]" AS 'rust-runtime-median',
+    rust."time to finish 98th percentile[ms]" AS 'rust-runtime-98p' ;
+
+-- vim: sw=4 ts=4 sts=4 et
