@@ -1,17 +1,13 @@
 CREATE TABLE "cpp" AS FROM '../output/cpp.csv';
-CREATE TABLE "elixir" AS FROM '../output/elixir.csv';
 CREATE TABLE "erlang" AS FROM '../output/erlang.csv';
 CREATE TABLE "go" AS FROM '../output/go.csv';
-CREATE TABLE "haskell-channels" AS FROM '../output/haskell-channels.csv';
 CREATE TABLE "haskell-mvars" AS FROM '../output/haskell-mvars.csv';
 CREATE TABLE "rust" AS FROM '../output/rust.csv';
 
 CREATE VIEW "all-results" AS
 FROM cpp
-JOIN elixir ON cpp."#nodes" = elixir."#nodes" AND cpp.trips = elixir.trips
 JOIN erlang ON cpp."#nodes" = erlang."#nodes" AND cpp.trips = erlang.trips
 JOIN go ON cpp."#nodes" = go."#nodes" AND cpp.trips = go.trips
-JOIN "haskell-channels" ON cpp."#nodes" = "haskell-channels"."#nodes" AND cpp.trips = "haskell-channels".trips
 JOIN "haskell-mvars" ON cpp."#nodes" = "haskell-mvars"."#nodes" AND cpp.trips = "haskell-mvars".trips
 JOIN rust ON cpp."#nodes" = rust."#nodes" AND cpp.trips = rust.trips
 SELECT
@@ -25,15 +21,6 @@ SELECT
     cpp."time to finish RMS" AS 'cpp-runtime-rms',
     cpp."time to finish median[ms]" AS 'cpp-runtime-median',
     cpp."time to finish 98th percentile[ms]" AS 'cpp-runtime-98p',
-
-    elixir."setup mean[ms]" AS 'elixir-setup-mean',
-    elixir."setup RMS" AS 'elixir-setup-rms',
-    elixir."setup median[ms]" AS 'elixir-setup-median',
-    elixir."setup 98th percentile[ms]" AS 'elixir-setup-98p',
-    elixir."time to finish mean[ms]" AS 'elixir-runtime-mean',
-    elixir."time to finish RMS" AS 'elixir-runtime-rms',
-    elixir."time to finish median[ms]" AS 'elixir-runtime-median',
-    elixir."time to finish 98th percentile[ms]" AS 'elixir-runtime-98p',
 
     erlang."setup mean[ms]" AS 'erlang-setup-mean',
     erlang."setup RMS" AS 'erlang-setup-rms',
@@ -52,16 +39,6 @@ SELECT
     go."time to finish RMS" AS 'go-runtime-rms',
     go."time to finish median[ms]" AS 'go-runtime-median',
     go."time to finish 98th percentile[ms]" AS 'go-runtime-98p',
-
-
-    "haskell-channels"."setup mean[ms]" AS 'haskell-channels-setup-mean',
-    "haskell-channels"."setup RMS" AS 'haskell-channels-setup-rms',
-    "haskell-channels"."setup median[ms]" AS 'haskell-channels-setup-median',
-    "haskell-channels"."setup 98th percentile[ms]" AS 'haskell-channels-setup-98p',
-    "haskell-channels"."time to finish mean[ms]" AS 'haskell-channels-runtime-mean',
-    "haskell-channels"."time to finish RMS" AS 'haskell-channels-runtime-rms',
-    "haskell-channels"."time to finish median[ms]" AS 'haskell-channels-runtime-median',
-    "haskell-channels"."time to finish 98th percentile[ms]" AS 'haskell-channels-runtime-98p',
 
     "haskell-mvars"."setup mean[ms]" AS 'haskell-mvars-setup-mean',
     "haskell-mvars"."setup RMS" AS 'haskell-mvars-setup-rms',
