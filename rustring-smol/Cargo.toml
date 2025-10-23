@@ -1,0 +1,9 @@
+[package]
+name = "rustring"
+version = "0.1.0"
+authors = ["wolf4ood <enrico.risa@gmail.com>", "<lavrin@gmail.com>"]
+edition = "2024"
+
+
+[dependencies]
+smol = "2.0.2"
