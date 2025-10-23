@@ -34,9 +34,9 @@ func main() {
                 "cpp":      "../cppring/",
                 "go":       "../goring/",
                 "erlang":   "../erlring/",
-                "elixir":   "../exring/",
+                //"elixir":   "../exring/",
                 "haskell-mvars":  "../haskring",
-                "haskell-channels":  "../haskring-channels",
+                //"haskell-channels":  "../haskring-channels",
 		//"ponylang": "../ponyring",
                 "rust":     "../rustring",
 	}

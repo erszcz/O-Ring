@@ -1,12 +1,10 @@
 #!/usr/bin/env bash
 
 BASENAME=$(basename $0 .sh)
-set -x
 TMPFILE=$(mktemp -t $BASENAME)
-set +x
 
 for NODES in `seq 10000 20000 90000`; do
-  OUTPUT_CSV="uplot.x-trips.nodes$(printf %06d ${NODES}).csv"
+  OUTPUT_CSV="plot-inputs/x-trips.nodes$(printf %06d ${NODES}).csv"
   cat <<EOF > $TMPFILE
 COPY (
   FROM "all-results"
@@ -27,7 +25,7 @@ EOF
 done
 
 for TRIPS in `seq 500 1000 4500`; do
-  OUTPUT_CSV="uplot.x-nodes.trips$(printf %06d ${TRIPS}).csv"
+  OUTPUT_CSV="plot-inputs/x-nodes.trips$(printf %06d ${TRIPS}).csv"
   cat <<EOF > $TMPFILE
 COPY (
   FROM "all-results"
