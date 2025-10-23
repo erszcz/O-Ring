@@ -1,6 +1,9 @@
 #!/usr/bin/env bash
 
-TMPFILE=tmpfile
+BASENAME=$(basename $0 .sh)
+set -x
+TMPFILE=$(mktemp -t $BASENAME)
+set +x
 
 for NODES in `seq 10000 20000 90000`; do
   OUTPUT_CSV="uplot.x-trips.nodes$(printf %06d ${NODES}).csv"
@@ -20,7 +23,7 @@ COPY (
 ) TO '${OUTPUT_CSV}' (HEADER, DELIMITER ',');
 EOF
 
-  duckdb results.duckdb < tmpfile
+  duckdb results.duckdb < $TMPFILE
 done
 
 for TRIPS in `seq 500 1000 4500`; do
@@ -41,5 +44,5 @@ COPY (
 ) TO '${OUTPUT_CSV}' (HEADER, DELIMITER ',');
 EOF
 
-  duckdb results.duckdb < tmpfile
+  duckdb results.duckdb < $TMPFILE
 done
