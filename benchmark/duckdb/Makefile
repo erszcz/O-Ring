@@ -6,17 +6,15 @@ results.duckdb: compile-results.sql $(CSV_OUTPUTS)
 
 uplot.x-nodes:
 	@echo; \
-	for infile in `ls -1 uplot.x-nodes*`; do \
-	  uplot -t "oring benchmark results [ms]" \
-	    -w 60 -h 24 -d, -H lines $$infile; \
+	for infile in `ls -1 uplot.x-nodes*.csv`; do \
+	  uplot -t "oring benchmark results [ms]" -w 60 -h 24 -d, -H lines $$infile; \
 	  echo; echo; \
 	done
 
 uplot.x-trips:
 	@echo; \
-	for infile in `ls -1 uplot.x-trips*`; do \
-	  uplot -t "oring benchmark results [ms]" \
-	    -w 60 -h 24 -d, -H lines $$infile; \
+	for infile in `ls -1 uplot.x-trips*.csv`; do \
+	  uplot -t "oring benchmark results [ms]" -w 60 -h 24 -d, -H lines $$infile; \
 	  echo; echo; \
 	done
 
