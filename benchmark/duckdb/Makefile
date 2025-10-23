@@ -26,7 +26,15 @@ gnuplot.x-nodes: plot-inputs
 	for infile in `find $< -name 'x-nodes*.csv' -type f | sort`; do \
 	  export outfile=plots/`basename $$infile .csv`.png ; \
 	  echo $$outfile ; \
-	  gnuplot -e "infile='$$infile'; outfile='$$outfile'" plot.gp ; \
+	  gnuplot -e "infile='$$infile'; outfile='$$outfile'" plot.x-nodes.gp ; \
+	done
+
+gnuplot.x-trips: plot-inputs
+	mkdir -p plots ; \
+	for infile in `find $< -name 'x-trips*.csv' -type f | sort`; do \
+	  export outfile=plots/`basename $$infile .csv`.png ; \
+	  echo $$outfile ; \
+	  gnuplot -e "infile='$$infile'; outfile='$$outfile'" plot.x-trips.gp ; \
 	done
 
 # vim: sw=4 ts=4 sts=4 noet
