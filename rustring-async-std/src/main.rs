@@ -2,6 +2,7 @@ use async_std::sync::{channel, Receiver, Sender};
 use async_std::task;
 use std::env;
 use std::time::Instant;
+
 fn main() {
     let args: Vec<String> = env::args().collect();
 
