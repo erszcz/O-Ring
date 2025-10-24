@@ -1,9 +1,13 @@
-use smol::{channel, Task};
+use macro_rules_attribute::apply;
+use smol_macros::main;
+use smol::{channel, Executor, Task};
 use smol::channel::{Receiver, Sender};
 use std::env;
+use std::sync::Arc;
 use std::time::Instant;
 
-fn main() {
+#[apply(main!)]
+async fn main(ex: Arc<Executor>) {
     let args: Vec<String> = env::args().collect();
 
     if args.len() != 3 {
@@ -14,10 +18,10 @@ fn main() {
     let m: u64 = args[2].parse().expect("Cannot parse number of trips");
 
     let start = Instant::now();
-    let (tx, rx, _tasks) = create_ring(n);
+    let (tx, rx, _tasks) = create_ring(ex.clone(), n);
     let creation_time = start.elapsed();
 
-    let (elapsed_time, total) = smol::block_on(async {
+    let (elapsed_time, total) = ex.spawn(async move {
         let start = Instant::now();
         let mut total = 0;
         for _ in 0..m {
@@ -26,7 +30,7 @@ fn main() {
             total += received;
         }
         (start.elapsed(), total)
-    });
+    }).await;
 
     if total != n * m {
         panic!("Ring failed")
@@ -41,14 +45,14 @@ fn main() {
     );
 }
 
-fn create_ring(n: u64) -> (Sender<u64>, Receiver<u64>, Vec<Task<()>>) {
+fn create_ring(ex: Arc<Executor>, n: u64) -> (Sender<u64>, Receiver<u64>, Vec<Task<()>>) {
     let (tx, mut rx) = channel::bounded(1);
 
     let mut tasks = Vec::with_capacity(n as usize);
     for _ in 0..n {
         let (t, r): (Sender<u64>, Receiver<u64>) = channel::bounded(1);
         let inner_r = rx.clone();
-        let task = smol::spawn(async move {
+        let task = ex.spawn(async move {
             loop {
                 match inner_r.recv().await {
                     Ok(m) => {
