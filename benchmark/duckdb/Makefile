@@ -1,8 +1,19 @@
 BENCHMARK_RESULTS := $(wildcard ../output/*.csv)
+DUCKDB_DATABASE := results.duckdb
 
-results.duckdb: compile-results.sql $(BENCHMARK_RESULTS)
-	rm -f $@; \
-	duckdb $@ ".read $<"
+.PHONY: duckdb.import
+duckdb.import:
+	@if [ ! -z "$$lang" ]; then \
+	  echo "Importing ../output/$$lang.csv into $(DUCKDB_DATABASE)" ; \
+	  ./duckdb-import.sh "$$lang" "../output/$$lang.csv" | duckdb $(DUCKDB_DATABASE) ; \
+	else \
+	  echo "Env var 'lang' not defined" ; \
+	  exit 1 ; \
+	fi
+
+#results.duckdb: compile-results.sql $(BENCHMARK_RESULTS)
+#    rm -f $@; \
+#    duckdb $@ ".read $<"
 
 plot-inputs: results.duckdb
 	mkdir -p $@ && ./generate-plot-inputs.sh
