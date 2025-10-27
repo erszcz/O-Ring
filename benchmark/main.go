@@ -38,8 +38,9 @@ func main() {
                 //"haskell-mvars":  "../haskring",
                 //"haskell-channels":  "../haskring-channels",
 		//"ponylang": "../ponyring",
-                "rust-async-std": "../rustring-async-std",
-                "rust-smol":      "../rustring-smol",
+                //"rust-async-std": "../rustring-async-std",
+                "rust-smol":     "../rustring-smol",
+		"rust-tokio":    "../rustring-tokio",
 	}
 
 	for language, path := range languages {
