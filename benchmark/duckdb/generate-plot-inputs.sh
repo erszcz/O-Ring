@@ -10,7 +10,9 @@ COPY (
   FROM "all-results"
   SELECT concat(trips, '-', "#nodes") AS "x=trips nodes=${NODES}",
   "rust-async-std-runtime-median",
-  "rust-smol-runtime-median"
+  "rust-smol-b-runtime-median",
+  "rust-smol-unb-runtime-median",
+  "rust-tokio-runtime-median"
   WHERE "#nodes"=${NODES}
   ORDER BY "trips"
 ) TO '${OUTPUT_CSV}' (HEADER, DELIMITER ',');
@@ -26,7 +28,9 @@ COPY (
   FROM "all-results"
   SELECT concat("#nodes", '-', trips) AS "x=nodes trips=${TRIPS}",
   "rust-async-std-runtime-median",
-  "rust-smol-runtime-median"
+  "rust-smol-b-runtime-median",
+  "rust-smol-unb-runtime-median",
+  "rust-tokio-runtime-median"
   WHERE "trips"=${TRIPS}
   ORDER BY "#nodes"
 ) TO '${OUTPUT_CSV}' (HEADER, DELIMITER ',');
