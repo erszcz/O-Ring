@@ -9,7 +9,10 @@ for NODES in `seq 10000 20000 90000`; do
 COPY (
   FROM "all-results"
   SELECT concat(trips, '-', "#nodes") AS "x=trips nodes=${NODES}",
-  "rust-async-std-runtime-median",
+  "cpp-runtime-median",
+  "erlang-runtime-median",
+  "go-runtime-median",
+  "haskell-mvars-runtime-median",
   "rust-smol-b-runtime-median",
   "rust-smol-unb-runtime-median",
   "rust-tokio-runtime-median"
@@ -27,7 +30,10 @@ for TRIPS in `seq 500 4000 4500`; do
 COPY (
   FROM "all-results"
   SELECT concat("#nodes", '-', trips) AS "x=nodes trips=${TRIPS}",
-  "rust-async-std-runtime-median",
+  "cpp-runtime-median",
+  "erlang-runtime-median",
+  "go-runtime-median",
+  "haskell-mvars-runtime-median",
   "rust-smol-b-runtime-median",
   "rust-smol-unb-runtime-median",
   "rust-tokio-runtime-median"
