@@ -1,0 +1,10 @@
+[package]
+name = "rustring"
+version = "0.1.0"
+authors = ["wolf4ood <enrico.risa@gmail.com>", "<lavrin@gmail.com>"]
+edition = "2024"
+
+
+[dependencies]
+anyhow = "1.0.100"
+lunatic = "0.14.1"
