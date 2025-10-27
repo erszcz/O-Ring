@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"os"
 	"strconv"
+	"time"
 )
 
 func main() {
@@ -50,7 +51,8 @@ func main() {
 		for _, n := range nodesSteps {
 			statisticalResults[n] = make(map[int]StatisticTestResult)
 			for _, s := range tripsSteps {
-				fmt.Printf("\tnodes=%d & trips=%d\n", n, s)
+				now := time.Now()
+				fmt.Printf("\t%s\tnodes=%d & trips=%d\n", now.Format("15:04:05.000000"), n, s)
 				statisticalResult := executeStatisticTest(path, n, s, numberOfTestRepetitions)
 				statisticalResults[n][s] = statisticalResult
 			}
