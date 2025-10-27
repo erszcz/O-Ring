@@ -46,11 +46,11 @@ async fn main(ex: Arc<Executor>) {
 }
 
 fn create_ring(ex: Arc<Executor>, n: u64) -> (Sender<u64>, Receiver<u64>, Vec<Task<()>>) {
-    let (tx, mut rx) = channel::bounded(1);
+    let (tx, mut rx) = channel::unbounded();
 
     let mut tasks = Vec::with_capacity(n as usize);
     for _ in 0..n {
-        let (t, r): (Sender<u64>, Receiver<u64>) = channel::bounded(1);
+        let (t, r): (Sender<u64>, Receiver<u64>) = channel::unbounded();
         let inner_r = rx.clone();
         let task = ex.spawn(async move {
             loop {
