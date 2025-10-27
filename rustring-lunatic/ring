@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+
+lunatic run target/wasm32-wasip1/release/rustring.wasm "$1" "$2"
+

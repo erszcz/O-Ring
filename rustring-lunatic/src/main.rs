@@ -10,8 +10,8 @@ fn main(mailbox: Mailbox<u64>) {
         panic!("./ring N:<number of process> M:<trips>");
     }
 
-    let n: u64 = args[1].parse().unwrap();
-    let m: u64 = args[2].parse().unwrap();
+    let n: u64 = args[1].parse().expect("expected n: number of processes");
+    let m: u64 = args[2].parse().expect("expected m: number of trips");
 
     let start = Instant::now();
     let ring = create_ring(mailbox.this(), n);
@@ -41,16 +41,12 @@ fn main(mailbox: Mailbox<u64>) {
 }
 
 fn create_ring(this: Process<u64>, n: u64) -> Process<u64> {
-    chain(this, n)
-}
-
-fn chain(parent: Process<u64>, n: u64) -> Process<u64> {
-    if n == 0 {
-        return parent;
-    } else {
-        let new = Process::spawn(parent, process);
-        chain(new, n - 1)
+    let mut parent = this;
+    for _ in 0..n {
+        let proc = Process::spawn(parent, process);
+        parent = proc;
     }
+    parent
 }
 
 fn process(dest: Process<u64>, mailbox: Mailbox<u64>) {
