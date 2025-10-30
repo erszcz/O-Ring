@@ -1,0 +1,2 @@
+ring:
+	gradle linkReleaseExecutableNative
