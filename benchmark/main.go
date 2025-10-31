@@ -38,10 +38,11 @@ func main() {
                 //"elixir":   "../exring/",
                 //"haskell-mvars":  "../haskring",
                 //"haskell-channels":  "../haskring-channels",
+		"kotlin-native":   "../kotring",
 		//"ponylang": "../ponyring",
                 //"rust-async-std": "../rustring-async-std",
-                "rust-smol":     "../rustring-smol",
-		"rust-tokio":    "../rustring-tokio",
+                //"rust-smol":     "../rustring-smol",
+		//"rust-tokio":    "../rustring-tokio",
 	}
 
 	for language, path := range languages {
