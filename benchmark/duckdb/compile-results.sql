@@ -8,6 +8,7 @@ INNER JOIN erlang ON (((cpp."#nodes" = erlang."#nodes") AND (cpp.trips = erlang.
 INNER JOIN go ON (((cpp."#nodes" = go."#nodes") AND (cpp.trips = go.trips))) 
 INNER JOIN "haskell-channels" ON (((cpp."#nodes" = "haskell-channels"."#nodes") AND (cpp.trips = "haskell-channels".trips))) 
 INNER JOIN "haskell-mvars" ON (((cpp."#nodes" = "haskell-mvars"."#nodes") AND (cpp.trips = "haskell-mvars".trips))) 
+INNER JOIN "kotlin-native" ON (((cpp."#nodes" = "kotlin-native"."#nodes") AND (cpp.trips = "kotlin-native".trips))) 
 INNER JOIN "rust-async-std" ON (((cpp."#nodes" = "rust-async-std"."#nodes") AND (cpp.trips = "rust-async-std".trips)))
 INNER JOIN "rust-smol-b" ON (((cpp."#nodes" = "rust-smol-b"."#nodes") AND (cpp.trips = "rust-smol-b".trips)))
 INNER JOIN "rust-smol-unb" ON (((cpp."#nodes" = "rust-smol-unb"."#nodes") AND (cpp.trips = "rust-smol-unb".trips)))
@@ -61,6 +62,14 @@ go."time to finish 98th percentile[ms]" AS "go-runtime-98p",
 "haskell-mvars"."time to finish RMS" AS "haskell-mvars-runtime-rms",
 "haskell-mvars"."time to finish median[ms]" AS "haskell-mvars-runtime-median",
 "haskell-mvars"."time to finish 98th percentile[ms]" AS "haskell-mvars-runtime-98p",
+"kotlin-native"."setup mean[ms]" AS "kotlin-native-setup-mean",
+"kotlin-native"."setup RMS" AS "kotlin-native-setup-rms",
+"kotlin-native"."setup median[ms]" AS "kotlin-native-setup-median",
+"kotlin-native"."setup 98th percentile[ms]" AS "kotlin-native-setup-98p",
+"kotlin-native"."time to finish mean[ms]" AS "kotlin-native-runtime-mean",
+"kotlin-native"."time to finish RMS" AS "kotlin-native-runtime-rms",
+"kotlin-native"."time to finish median[ms]" AS "kotlin-native-runtime-median",
+"kotlin-native"."time to finish 98th percentile[ms]" AS "kotlin-native-runtime-98p",
 "rust-async-std"."setup mean[ms]" AS "rust-async-std-setup-mean",
 "rust-async-std"."setup RMS" AS "rust-async-std-setup-rms",
 "rust-async-std"."setup median[ms]" AS "rust-async-std-setup-median",

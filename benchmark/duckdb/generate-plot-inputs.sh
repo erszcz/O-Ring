@@ -13,6 +13,7 @@ COPY (
   "erlang-runtime-median",
   "go-runtime-median",
   "haskell-mvars-runtime-median",
+  "kotlin-native-runtime-median",
   "rust-smol-b-runtime-median",
   "rust-smol-unb-runtime-median",
   "rust-tokio-runtime-median"
@@ -34,6 +35,7 @@ COPY (
   "erlang-runtime-median",
   "go-runtime-median",
   "haskell-mvars-runtime-median",
+  "kotlin-native-runtime-median",
   "rust-smol-b-runtime-median",
   "rust-smol-unb-runtime-median",
   "rust-tokio-runtime-median"
