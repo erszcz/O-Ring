@@ -10,8 +10,10 @@ COPY (
   FROM "all-results"
   SELECT concat(trips, '-', "#nodes") AS "x=trips nodes=${NODES}",
   "cpp-runtime-median",
+  "elixir-runtime-median",
   "erlang-runtime-median",
   "go-runtime-median",
+  "haskell-channels-runtime-median",
   "haskell-mvars-runtime-median",
   "kotlin-native-runtime-median",
   "rust-smol-b-runtime-median",
@@ -32,8 +34,10 @@ COPY (
   FROM "all-results"
   SELECT concat("#nodes", '-', trips) AS "x=nodes trips=${TRIPS}",
   "cpp-runtime-median",
+  "elixir-runtime-median",
   "erlang-runtime-median",
   "go-runtime-median",
+  "haskell-channels-runtime-median",
   "haskell-mvars-runtime-median",
   "kotlin-native-runtime-median",
   "rust-smol-b-runtime-median",

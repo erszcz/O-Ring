@@ -14,13 +14,17 @@ duckdb.import:
 .PHONY: duckdb.replace-view
 duckdb.replace-view: results.duckdb
 
+.PHONY: serve.plotly
+serve.plotly: plot-inputs plot-inputs/.depfile
+	python3 -m http.server
+
 results.duckdb: replace-view.sql
 	duckdb results.duckdb ".read $<" && rm -f plot-inputs/.depfile
 
 plot-inputs:
 	mkdir -p $@
 
-plot-inputs/.depfile: results.duckdb
+plot-inputs/.depfile: results.duckdb generate-plot-inputs.sh
 	./generate-plot-inputs.sh && touch plot-inputs/.depfile
 
 uplot.x-nodes: plot-inputs plot-inputs/.depfile
