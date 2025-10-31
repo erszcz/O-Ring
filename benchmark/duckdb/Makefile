@@ -4,35 +4,40 @@ DUCKDB_DATABASE := results.duckdb
 .PHONY: duckdb.import
 duckdb.import:
 	@if [ ! -z "$$lang" ]; then \
-	  echo "Importing ../output/$$lang.csv into $(DUCKDB_DATABASE)" ; \
+	  echo "make $@: Importing ../output/$$lang.csv into $(DUCKDB_DATABASE)" ; \
 	  ./duckdb-import.sh "$$lang" "../output/$$lang.csv" | duckdb $(DUCKDB_DATABASE) ; \
 	else \
-	  echo "Env var 'lang' not defined" ; \
+	  echo "make $@: Env var 'lang' not defined. What to import?" ; \
 	  exit 1 ; \
 	fi
 
-#results.duckdb: compile-results.sql $(BENCHMARK_RESULTS)
-#    rm -f $@; \
-#    duckdb $@ ".read $<"
+.PHONY: duckdb.replace-view
+duckdb.replace-view: results.duckdb
 
-plot-inputs: results.duckdb
-	mkdir -p $@ && ./generate-plot-inputs.sh
+results.duckdb: replace-view.sql
+	duckdb results.duckdb ".read $<" && rm -f plot-inputs/.depfile
 
-uplot.x-nodes: plot-inputs
+plot-inputs:
+	mkdir -p $@
+
+plot-inputs/.depfile: results.duckdb
+	./generate-plot-inputs.sh && touch plot-inputs/.depfile
+
+uplot.x-nodes: plot-inputs plot-inputs/.depfile
 	@echo; \
 	for infile in `find $< -name 'x-nodes*.csv' -type f | sort`; do \
 	  uplot -t "oring benchmark results [ms]" -w 60 -h 24 -d, -H lines $$infile; \
 	  echo; echo; \
 	done
 
-uplot.x-trips: plot-inputs
+uplot.x-trips: plot-inputs plot-inputs/.depfile
 	@echo; \
 	for infile in `find $< -name 'x-trips*.csv' -type f | sort`; do \
 	  uplot -t "oring benchmark results [ms]" -w 60 -h 24 -d, -H lines $$infile; \
 	  echo; echo; \
 	done
 
-gnuplot.x-nodes: plot-inputs
+gnuplot.x-nodes: plot-inputs plot-inputs/.depfile
 	mkdir -p plots ; \
 	for infile in `find $< -name 'x-nodes*.csv' -type f | sort`; do \
 	  export outfile=plots/`basename $$infile .csv`.png ; \
@@ -40,7 +45,7 @@ gnuplot.x-nodes: plot-inputs
 	  gnuplot -e "infile='$$infile'; outfile='$$outfile'" plot.x-nodes.gp ; \
 	done
 
-gnuplot.x-trips: plot-inputs
+gnuplot.x-trips: plot-inputs plot-inputs/.depfile
 	mkdir -p plots ; \
 	for infile in `find $< -name 'x-trips*.csv' -type f | sort`; do \
 	  export outfile=plots/`basename $$infile .csv`.png ; \
