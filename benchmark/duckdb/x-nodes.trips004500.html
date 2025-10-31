@@ -26,79 +26,51 @@
     <div id="plot"></div>
   </div>
   <script>
-var traces = [];
-traces.push({
-  name: "cpp-runtime-median",
-  x: [
-30000,50000,70000,90000,],
-  y: [
-31467.0,53081.0,74753.0,96278.0,],
-  mode: 'lines+markers'
-});
-traces.push({
-  name: "erlang-runtime-median",
-  x: [
-30000,50000,70000,90000,],
-  y: [
-39885.0,72536.0,104236.0,134990.0,],
-  mode: 'lines+markers'
-});
-traces.push({
-  name: "go-runtime-median",
-  x: [
-30000,50000,70000,90000,],
-  y: [
-47968.0,79501.0,112060.0,143782.0,],
-  mode: 'lines+markers'
-});
-traces.push({
-  name: "haskell-mvars-runtime-median",
-  x: [
-30000,50000,70000,90000,],
-  y: [
-16121.0,42096.0,62157.0,83964.0,],
-  mode: 'lines+markers'
-});
-traces.push({
-  name: "kotlin-native-runtime-median",
-  x: [
-30000,50000,70000,90000,],
-  y: [
-79320.0,135841.0,190678.0,244291.0,],
-  mode: 'lines+markers'
-});
-traces.push({
-  name: "rust-smol-b-runtime-median",
-  x: [
-30000,50000,70000,90000,],
-  y: [
-86725.0,146449.0,209480.0,270942.0,],
-  mode: 'lines+markers'
-});
-traces.push({
-  name: "rust-smol-unb-runtime-median",
-  x: [
-30000,50000,70000,90000,],
-  y: [
-76095.0,118007.0,170173.0,206136.0,],
-  mode: 'lines+markers'
-});
-traces.push({
-  name: "rust-tokio-runtime-median",
-  x: [
-30000,50000,70000,90000,],
-  y: [
-23313.0,42322.0,57778.0,75690.0,],
-  mode: 'lines+markers'
-});
-var layout = {
-  title: {text: ' x=nodes trips=4500 '},
-  xaxis: {title: {text: "nodes, trips=4500 "} },
-  yaxis: {title: {text: "runtime (ms)"} },
-  width: 1400,
-  height: 900
-};
-Plotly.newPlot("plot", {"data": traces, "layout": layout});
+    async function createPlot(csv_url) {
+      const response = await fetch(csv_url);
+      const data = await response.text();
+      const lines = data.trim().split('\n');
+      const header_line = lines.shift();
+      const header = header_line.split(',');
+
+      const subtitle = header[0];
+      const series_names = header.slice(1).map(name => name.replace("-runtime-median", ""));
+
+      const x_values = [];
+      const y_values = series_names.map(() => []);
+
+      lines.forEach(line => {
+        const values = line.split(',');
+        x_values.push(values[0].split('-')[0]);
+        for (let i = 1; i < values.length; i++) {
+          y_values[i-1].push(values[i]);
+        }
+      });
+
+      const traces = [];
+      for (let i = 0; i < series_names.length; i++) {
+        traces.push({
+          name: series_names[i],
+          x: x_values,
+          y: y_values[i],
+          mode: 'lines+markers'
+        });
+      }
+
+      const ntrips_parts = subtitle.split(' ');
+      const ntrips = ntrips_parts[1];
+
+      const layout = {
+        title: {text: subtitle},
+        xaxis: {title: {text: "nodes, " + ntrips} },
+        yaxis: {title: {text: "runtime median (ms)"} },
+        width: 1400,
+        height: 900
+      };
+
+      Plotly.newPlot("plot", {data: traces, layout: layout});
+    }
+    createPlot('plot-inputs/x-nodes.trips004500.csv');
   </script>
 </body>
 </html>
